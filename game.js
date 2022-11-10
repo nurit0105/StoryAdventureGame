@@ -44,6 +44,7 @@ const textNodes = [
     {
         id: 1,
         text: 'Willkommen beim Fantasy Adventure Game. Es ist dein erster Tag im neuen Dorf und du befindest dich am Marktplatz. Wohin willst du?',
+        image: "https://us.123rf.com/450wm/algolonline/algolonline1211/algolonline121100006/16245775-medieval-oder-fantasy-stadtplatz-und-marktplatz-3d-%C3%BCbertrug-digital-abbildung.jpg",
         options: [
             {
                 text: 'Richtung Wald',
@@ -60,6 +61,7 @@ const textNodes = [
     {
         id: 2,
         text: 'Du läufst durch den Wald und findest Pilze. Hebst du sie auf?',
+        image: "https://www.tierwelt.ch/fileadmin/user_upload/tierwelt/artikel-bilder/woodwing/18-2022/88324be8351701e4a2e08bb2e9801331a7edc59865c4ad6b6994b97d143ea5cc.jpg",
         options: [
             {
                 text: 'Pilze mitnehmen',
@@ -75,6 +77,7 @@ const textNodes = [
     {
         id: 27,
         text: 'Du bekommst sehr starken Hunger!',
+        image: "https://medlexi.de/images/thumb/Hunger.jpg/400px-Hunger.jpg",
         options: [
             {
                 text: 'Die gesammelten Pilze essen',
@@ -91,6 +94,7 @@ const textNodes = [
     {
         id: 5,
         text: 'Die Pilze waren giftig! Du halluzinierst und stirbst.',
+        image: "https://thumbs.dreamstime.com/b/t%C3%BCr-zu-den-halluzinationen-buntes-licht-und-pilze-190072429.jpg",
         options: [
             {
                 text: 'Restart',
@@ -101,6 +105,7 @@ const textNodes = [
     {
         id: 6,
         text: 'Du findest mitten im Wald ein einsames Restaurant.',
+        image: "https://img2.goodfon.com/original/1680x1050/7/39/anime-les-reka-dom.jpg",
         options: [
             {
                 text: 'hineingehen',
@@ -114,6 +119,7 @@ const textNodes = [
     {
         id: 7,
         text: 'Du hast solange im Wald nach Essen gesucht, dass du dich verlaufen hast. Du findest aus dem Wald nicht hinaus und stirbst an Hunger.',
+        image: "https://s1.1zoom.me/big0/588/346054-blackangel.jpg",
         options: [
             {
                 text: 'Restart',
@@ -124,6 +130,7 @@ const textNodes = [
     {
         id: 8,
         text: 'Das Restaurant ist fast voll. Drinnen bekommst du eine gute Mahlzeit. Plötzlich beginnen alle sich zu prügeln. Der Ausgang ist blockiert. Du siehst einen Tunnel in der Ecke',
+        image: "https://pnpnews.de/wp-content/uploads/2019/06/Eberron5e.jpg",
         options: [
             {
                 text: 'durch den Tunnel gehen',

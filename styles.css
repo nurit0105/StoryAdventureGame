@@ -21,6 +21,11 @@ header {
     color: white;
 }
 
+img {
+    width: 400px;
+    height: auto;
+}
+
 .container {
     padding: 20px;
     width: 600px;
