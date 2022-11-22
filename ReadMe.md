@@ -3,5 +3,5 @@
 ## Authors
 
 - Laura Nurit Davidowicz
-- Enes
-- Thomas
+- Enes Berk
+- Thomas Durlacher
