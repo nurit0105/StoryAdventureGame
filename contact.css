@@ -9,8 +9,6 @@ body {
     margin: 0;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
     background-color: #F6FFFF;
 }
 
@@ -61,24 +59,27 @@ h3 {
     font-size: x-large;
 }
 
-p {
 
+a {
+    color: white;
 }
 
 .container-personal{
-    margin: 30px;
+    margin: 50px;
     background-color: #bad2f6 ;
+    border-radius: 5px;
 }
 /* Columns Anfang */
 
 .column {
-    margin: auto;
     float: left;
     width: 33.33%;
     padding: 10px;
     height: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
+    border-radius: 5px;
+    margin: auto;
 }
 
 .row:after {
@@ -102,10 +103,18 @@ button {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
+    border-radius: 5px;
 }
 
 button:hover {
     opacity: 0.7;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+    border: 3px solid #122d2b;
+    border-radius: 5px;
 }
 
 .title {
@@ -117,7 +126,7 @@ button:hover {
 /* Contact Info Ende */
 
 .footer {
-    position: fixed;
+    /* position: fixed; */
     padding: 10px 10px 10px;
     font-size: small;
     text-align: center;
