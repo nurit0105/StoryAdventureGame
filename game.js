@@ -1,4 +1,7 @@
 import {textNodes} from "./data.js";
+import {Player} from "./player.js";
+import {Inventory} from "./player.js";
+
 //import vis from "./node_modules/vis/dist/vis.js";
 
 class Node {
@@ -67,10 +70,16 @@ class Game {
     }
 }
 
+
+
+
+
+
+
 // Using the above implemented graph class
 let g = new Game();
-
-
+let p = new Player("thomas", "blue");
+p.printPlayer();
 
 /*
 vis.js is used to visualize the graph, visualization() is used to update the visualization //maybe class?
