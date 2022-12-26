@@ -27,7 +27,7 @@ class TimeNode extends Node {
 
 class Game {
     constructor() {
-        this.AdjList = new Map();
+        this.AdjList = new Map(); // main data structure for the graph
         this.activeNode = 0; // the first active node has the nodeID 0
     }
     addNode(nodeID) {
@@ -55,7 +55,7 @@ class Game {
         return numberOfEdges;
     }*/
     printGraph() {
-        console.log(this.AdjList);
+        console.log(this);
        /* for (const element of this.AdjList.keys()) {
             console.log("Node", element);
         }
