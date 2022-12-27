@@ -4,6 +4,7 @@ import {Inventory} from "./player.js";
 
 //import vis from "./node_modules/vis/dist/vis.js";
 
+
 class Node {
     constructor(nodeID, nodeType) {
         this.edge = [];
