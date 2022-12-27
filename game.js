@@ -122,7 +122,7 @@ const optionButtonsElement = document.getElementById('option-buttons')
 let state = {}
 
 function startGame() {
-    state = {}
+    state = {} // the current state symbolises the Player's equipment
     showTextNode(1)
 }
 

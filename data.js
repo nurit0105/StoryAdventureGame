@@ -18,13 +18,13 @@ const dataset = [
     },
     {
         id: 2,
-        text: 'Du läufst durch den Wald und findest Pilze. Hebst du sie auf?',
+        text: 'Du läufst durch den Wald und findest unter einer Fichte mehrere Pilze. Sammelst du sie ein?',
         image: "https://www.tierwelt.ch/fileadmin/user_upload/tierwelt/artikel-bilder/woodwing/18-2022/88324be8351701e4a2e08bb2e9801331a7edc59865c4ad6b6994b97d143ea5cc.jpg",
         options: [
             {
                 text: 'Pilze mitnehmen',
                 setState: {mushrooms: true},
-                nextText: 27
+                nextText: 29
             }, {
                 text: 'Pilze ignorieren',
                 setState: {mushrooms: false},
@@ -34,25 +34,219 @@ const dataset = [
     },
     {
         id: 27,
-        text: 'Du bekommst sehr starken Hunger!',
+        text: 'Du gehst weiter durch den Wald und siehst plötzlich einen blauen Apfelbaum. Pflügst du ein paar Äpfel?',
         image: "https://medlexi.de/images/thumb/Hunger.jpg/400px-Hunger.jpg",
         options: [
             {
-                text: 'Die gesammelten Pilze essen',
-                requiredState: (currentState) => currentState.mushrooms,
-                setState: {mushrooms: false},
-                nextText: 5
+                text: 'Äpfel pflücken', // new inventory equipment
+                setState: {apples: true},
+                nextText: 31
             },
             {
-                text: 'Im Wald nach Essen suchen',
+                text: 'Äpfel ignorieren',
+                setState: {apples: false},
                 nextText: 6
             }
         ]
     },
     {
+        id: 29,
+        text: 'Auf deinem Pfad stolperst du. Du schaust zu boden. Ein verrosteter Speer liegt dir zu Füßen. Hebst du ihn auf?',
+        options: [
+            {
+                text: 'Speer aufheben',
+                setState: {spear: true}, // new inventory weapon
+                nextText: 30
+            },
+            {
+                text: 'Speer liegen lassen',
+                setState: {spear: false},
+                nextText: 31
+            }
+        ]
+    },
+    {
+        id: 30,
+        text: 'Mit deinem Sperr in der Hand und Pilzen im Rucksack wanderst du weiter durch den Wald. Die Sonne geht langsam unter. ' +
+            'am boden siehst du etwas Leuchten. Du gehst hin. Es sind leuchtende Früchte. Nimmst du sie mit?',
+        options: [
+            {
+                text: 'Leuchtende Früchte mitnehmen',
+                setState: {fruits: true}, // new inventory equipment
+                nextText: 31
+            },
+            {
+                text: 'Leuchtende Früchte nicht mitnehmen',
+                setState: {fruits: false},
+                nextText: 31
+            }
+        ]
+    },
+    {
+        id: 31,
+        text: 'Dein Weg endet bei einem See. Was tust du?',
+        options: [
+            {
+                text: 'Fisch versuchen zu fangen',
+                nextText: 32
+            },
+            {
+                text: 'Fluss überqueren',
+                nextText: 33
+            },
+            {
+              text: 'Umkehren',
+              nextText: 5
+            }
+        ]
+    },
+    {
+      id: 33,
+      text: 'Beim Versuch den Fluss zu überqueren hält dich ein See Monster auf. Entweder du gibst dem Monster was zum essen oder es isst dich!',
+        options: [
+            {
+                text: 'Pilze zum essen geben',
+                requiredState: (currentState) => currentState.mushrooms, // requires to have certain equipment for this option
+                setState: {mushrooms: false}, //give equipment away
+                nextText: 36
+            },
+            {
+                text: 'Äpfel zum essen geben',
+                requiredState: (currentState) => currentState.apples, // requires to have certain equipment for this option
+                setState: {apples: false}, //give equipment away
+                nextText: 34
+            },
+            {
+                text: 'Leuchtende Früchte zum essen geben',
+                requiredState: (currentState) => currentState.fruits, // requires to have certain equipment for this option
+                setState: {fruits: false}, //give equipment away
+                nextText: 34
+            },
+            {
+                text: 'Gar nichts (Rucksack ist leer oder einfach keine Lust)',
+                nextText: 35
+            }
+        ]
+    },
+    {
+      id: 35,
+      text: 'Das Monster ist sauer und isst dich auf! Du bist tot.',
+      options: [
+          {
+              text: 'Restart',
+              nextText: 0
+          }
+      ]
+    },
+    {
+        id: 36,
+        text: 'Du hast das Monster mit den Pilzen vergiftet! Es stirbt.',
+        options: [
+            {
+                text: 'weitergehen',
+                nextText: 34
+            }
+        ]
+    },
+    {
+      id: 32, // equipment node
+      text: 'Du versuchst Fisch zu fangen',
+      options: [
+          {
+              text: 'Speer verwenden',
+              requiredState: (currentState) => currentState.spear, // requires to have certain weapon for this option
+              setState: {fish: true}, // new inventory equipment
+              nextText: 34
+          },
+          {
+              text: 'Mit den Händen fangen',
+              setState: {fish: false},
+              nextText: 34
+          }
+      ]
+    },
+    {
+        id: 34, // equipment node
+        text: 'Du gehst weiter durch den Wald und bekommst sehr starken Hunger. Was aus deinem Rucksack isst du? ',
+        options: [
+            {
+                text: 'Pilze von unter der Fichte',
+                requiredState: (currentState) => currentState.mushrooms, // requires to have certain equipment for this option
+                setState: {mushrooms: false}, // eat inventory equipment
+                nextText: 40
+            },
+            {
+                text: 'Leuchtende Früchte',
+                requiredState: (currentState) => currentState.fruits, // requires to have certain equipment for this option
+                setState: {fruits: false}, // eat inventory equipment
+                nextText: 39
+            },
+            {
+              text: 'blaue Äpfel',
+              requiredState: (currentState) => currentState.apples, // requires to have certain equipment for this option
+                setState: {apples: false}, // eat inventory equipment
+                nextText: 38
+            },
+            {
+              text: 'Fische vom Fischfang',
+              requiredState: (currentState) => currentState.fish, // requires to have certain equipment for this option
+                setState: {fish: false}, // eat inventory equipment
+                nextText: 38
+            },
+            {
+              text: 'Gar nichts (Rucksack ist leer oder einfach keine Lust)',
+                nextText: 37
+            }
+        ]
+    },
+    {
+      id: 37,
+        text: 'Du verhungerst und stirbst.',
+        options: [
+            {
+                text: 'restart',
+                nextText: 0
+            }
+        ]
+    },
+    {
+        id: 40,
+        text: 'Die Pilze waren giftig. Du halluzinierst und stirbst.',
+        options: [
+            {
+                text: 'restart',
+                nextText: 0
+            }
+        ]
+    },
+    {
+      id: 38,
+        text: 'Dein Hunger ist gesättigt. Du bist am Ende des Waldes und siehst ein Schild mit zwei Richtungen.' +
+            ' "Links: Schloss, Rechts: Marktplatz". Wohin gehst du?',
+        options: [
+            {
+                text: 'Nach Links',
+                nextText: 3
+            },
+            {
+                text: 'Nach Rechts',
+                nextText: 4
+            }
+        ]
+    },
+    {
+      id: 39,
+        text: 'Du verhungerst und stirbst.',
+        options: [
+            {
+                text: 'restart',
+                nextText: 0
+            }
+        ]
+    },
+    {
         id: 5,
-        text: 'Die Pilze waren giftig! Du halluzinierst und stirbst.',
-        image: "https://thumbs.dreamstime.com/b/t%C3%BCr-zu-den-halluzinationen-buntes-licht-und-pilze-190072429.jpg",
+        text: 'Du bist so tief im Wald. Du verirrst dich und findest nicht mehr raus. Plötzlich greift dich eine Schattengestalt aus dem Nichts an. Du stirbst.',
         options: [
             {
                 text: 'Restart',
@@ -74,7 +268,7 @@ const dataset = [
             }
         ]
     },
-    {
+     {
         id: 7,
         text: 'Du hast solange im Wald nach Essen gesucht, dass du dich verlaufen hast. Du findest aus dem Wald nicht hinaus und stirbst an Hunger.',
         image: "https://s1.1zoom.me/big0/588/346054-blackangel.jpg",
@@ -87,7 +281,7 @@ const dataset = [
     },
     {
         id: 8,
-        text: 'Das Restaurant ist fast voll. Drinnen bekommst du eine gute Mahlzeit. Plötzlich beginnen alle sich zu prügeln. Der Ausgang ist blockiert. Du siehst einen Tunnel in der Ecke',
+        text: 'Das Restaurant ist sehr voll. Drinnen bekommst du eine gute Mahlzeit. Plötzlich beginnen alle sich zu prügeln. Der Ausgang ist blockiert. Du siehst einen Tunnel in der Ecke',
         image: "https://pnpnews.de/wp-content/uploads/2019/06/Eberron5e.jpg",
         options: [
             {
@@ -134,12 +328,12 @@ const dataset = [
         options: [
             {
                 text: 'Axt',
-                setState: {axe: true},
+                setState: {axe: true}, // new inventory weapon
                 nextText: 28
             },
             {
                 text: 'Schwert',
-                setState: {sword: true},
+                setState: {sword: true}, // new inventory weapon
                 nextText: 28
             }
         ]
@@ -150,12 +344,12 @@ const dataset = [
         options: [
             {
                 text: 'kämpfen!',
-                requiredState: (currentState) => currentState.axe,
+                requiredState: (currentState) => currentState.axe, // requires to have certain weapon for this option
                 nextText: 14
             },
             {
                 text: 'kämpfen!',
-                requiredState: (currentState) => currentState.sword,
+                requiredState: (currentState) => currentState.sword, // requires to have certain weapon for this option
                 nextText: 15
             }
         ]
