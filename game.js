@@ -120,9 +120,10 @@ const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
 
 let state = {}
+// document.getElementById("statePrint").innerHTML = state; first try for visualizing the Inventory
 
 function startGame() {
-    state = {} // the current state symbolises the Player's equipment
+    state = {} // the current state symbolises the Player's Inventory
     showTextNode(1)
 }
 

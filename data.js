@@ -1,7 +1,7 @@
 const dataset = [
     {
         id: 1,
-        text: 'Willkommen beim Fantasy Adventure Game. Es ist dein erster Tag im neuen Dorf und du befindest dich am Marktplatz. Wohin willst du?',
+        text: 'Willkommen beim Fantasy Adventure Game. Deine Aktionen haben Konsequenzen. Es ist dein erster Tag im neuen Dorf und du befindest dich am Marktplatz. Wohin willst du?',
         image: "https://us.123rf.com/450wm/algolonline/algolonline1211/algolonline121100006/16245775-medieval-oder-fantasy-stadtplatz-und-marktplatz-3d-%C3%BCbertrug-digital-abbildung.jpg",
         options: [
             {
@@ -95,14 +95,14 @@ const dataset = [
                 nextText: 33
             },
             {
-              text: 'Umkehren',
-              nextText: 5
+                text: 'Umkehren',
+                nextText: 5
             }
         ]
     },
     {
-      id: 33,
-      text: 'Beim Versuch den Fluss zu überqueren hält dich ein See Monster auf. Entweder du gibst dem Monster was zum essen oder es isst dich!',
+        id: 33, //probability node player-dependent
+        text: 'Beim Versuch den Fluss zu überqueren hält dich ein See Monster auf. Entweder du gibst dem Monster was zum essen oder es isst dich!',
         options: [
             {
                 text: 'Pilze zum essen geben',
@@ -129,14 +129,14 @@ const dataset = [
         ]
     },
     {
-      id: 35,
-      text: 'Das Monster ist sauer und isst dich auf! Du bist tot.',
-      options: [
-          {
-              text: 'Restart',
-              nextText: 0
-          }
-      ]
+        id: 35,
+        text: 'Das Monster ist sauer und isst dich auf! Du bist tot.',
+        options: [
+            {
+                text: 'Restart',
+                nextText: 0 //0 symbolises restarting the Game
+            }
+        ]
     },
     {
         id: 36,
@@ -149,24 +149,24 @@ const dataset = [
         ]
     },
     {
-      id: 32, // equipment node
-      text: 'Du versuchst Fisch zu fangen',
-      options: [
-          {
-              text: 'Speer verwenden',
-              requiredState: (currentState) => currentState.spear, // requires to have certain weapon for this option
-              setState: {fish: true}, // new inventory equipment
-              nextText: 34
-          },
-          {
-              text: 'Mit den Händen fangen',
-              setState: {fish: false},
-              nextText: 34
-          }
-      ]
+        id: 32, //probability node player-dependent
+        text: 'Du versuchst Fisch zu fangen',
+        options: [
+            {
+                text: 'Speer verwenden',
+                requiredState: (currentState) => currentState.spear, // requires to have certain weapon for this option
+                setState: {fish: true}, // new inventory equipment
+                nextText: 34
+            },
+            {
+                text: 'Mit den Händen fangen',
+                setState: {fish: false},
+                nextText: 34
+            }
+        ]
     },
     {
-        id: 34, // equipment node
+        id: 34, //probability node player-dependent
         text: 'Du gehst weiter durch den Wald und bekommst sehr starken Hunger. Was aus deinem Rucksack isst du? ',
         options: [
             {
@@ -179,33 +179,33 @@ const dataset = [
                 text: 'Leuchtende Früchte',
                 requiredState: (currentState) => currentState.fruits, // requires to have certain equipment for this option
                 setState: {fruits: false}, // eat inventory equipment
-                nextText: 39
+                nextText: 38
             },
             {
-              text: 'blaue Äpfel',
-              requiredState: (currentState) => currentState.apples, // requires to have certain equipment for this option
+                text: 'blaue Äpfel',
+                requiredState: (currentState) => currentState.apples, // requires to have certain equipment for this option
                 setState: {apples: false}, // eat inventory equipment
                 nextText: 38
             },
             {
-              text: 'Fische vom Fischfang',
-              requiredState: (currentState) => currentState.fish, // requires to have certain equipment for this option
+                text: 'Fische vom Fischfang',
+                requiredState: (currentState) => currentState.fish, // requires to have certain equipment for this option
                 setState: {fish: false}, // eat inventory equipment
                 nextText: 38
             },
             {
-              text: 'Gar nichts (Rucksack ist leer oder einfach keine Lust)',
+                text: 'Gar nichts (Rucksack ist leer oder einfach keine Lust)',
                 nextText: 37
             }
         ]
     },
     {
-      id: 37,
+        id: 37,
         text: 'Du verhungerst und stirbst.',
         options: [
             {
                 text: 'restart',
-                nextText: 0
+                nextText: 0 //0 symbolises restarting the Game
             }
         ]
     },
@@ -215,12 +215,12 @@ const dataset = [
         options: [
             {
                 text: 'restart',
-                nextText: 0
+                nextText: 0 //0 symbolises restarting the Game
             }
         ]
     },
     {
-      id: 38,
+        id: 38,
         text: 'Dein Hunger ist gesättigt. Du bist am Ende des Waldes und siehst ein Schild mit zwei Richtungen.' +
             ' "Links: Schloss, Rechts: Marktplatz". Wohin gehst du?',
         options: [
@@ -231,16 +231,6 @@ const dataset = [
             {
                 text: 'Nach Rechts',
                 nextText: 4
-            }
-        ]
-    },
-    {
-      id: 39,
-        text: 'Du verhungerst und stirbst.',
-        options: [
-            {
-                text: 'restart',
-                nextText: 0
             }
         ]
     },
@@ -268,7 +258,7 @@ const dataset = [
             }
         ]
     },
-     {
+    {
         id: 7,
         text: 'Du hast solange im Wald nach Essen gesucht, dass du dich verlaufen hast. Du findest aus dem Wald nicht hinaus und stirbst an Hunger.',
         image: "https://s1.1zoom.me/big0/588/346054-blackangel.jpg",
@@ -310,21 +300,28 @@ const dataset = [
     },
     {
         id: 9,
-        text: 'Du kaufst dir einen magischen schwarzen Teppich und entscheidest dich mit dem Teppich weiter zu fliegen',
+        text: 'Im Geschäft der Mystik kannst du dir eines von drei Gegenständen leisten. Was kaufst du dir?',
         options: [
             {
-                text: 'zum Schloss reisen',
-                nextText: 12
+                text: 'Magic Carpet',
+                setState: {magicCarpet: true}, //new inventory equipment
+                nextText: 41
             },
             {
-                text: 'zum nächsten Dorf reisen',
-                nextText: 13
+                text: 'Magic Lamp',
+                setState: {magicLamp: true}, //new inventory equipment
+                nextText: 41
+            },
+            {
+                text: 'Magic Instrument',
+                setState: {magicInstrument: true}, //new inventory equipment
+                nextText: 41
             }
         ]
     },
     {
-        id: 10,
-        text: 'In der Marktschmiede kaufst du dir eine Waffe',
+        id: 10, //probability node player-dependent
+        text: 'In der Marktschmiede kannst du dir eine Waffe kaufen',
         options: [
             {
                 text: 'Axt',
@@ -335,11 +332,16 @@ const dataset = [
                 text: 'Schwert',
                 setState: {sword: true}, // new inventory weapon
                 nextText: 28
+            },
+            {
+                text: 'Ich kauf mir nichts. Mir reicht der Speer aus dem Wald',
+                requiredState: (currentState) => currentState.spear, // requires to have certain weapon for this option
+                nextText: 28
             }
         ]
     },
     {
-        id: 28,
+        id: 28, //probability node player-dependent
         text: 'Mit deiner neuen Waffe meldest du dich zu einem Kampf an. Du stehst deinem Gegner jetzt gegenüber.',
         options: [
             {
@@ -351,6 +353,11 @@ const dataset = [
                 text: 'kämpfen!',
                 requiredState: (currentState) => currentState.sword, // requires to have certain weapon for this option
                 nextText: 15
+            },
+            {
+                text: 'kämpfen!',
+                requiredState: (currentState) => currentState.spear, // requires to have certain weapon for this option
+                nextText: 15
             }
         ]
     },
@@ -361,6 +368,87 @@ const dataset = [
             {
                 text: 'aufwachen',
                 nextText: 2
+            }
+        ]
+    },
+    {
+        id: 41, //probability node player-dependent
+        text: 'Du gehst aus dem Geschäft raus und befindest dich wieder am Marktplatz. Möchtest du deinen Gegenstand verwenden?',
+        options: [
+            {
+                text: 'Magic Carpet verwenden',
+                requiredState: (currentState) => currentState.magicCarpet, // requires to have certain equipment for this option
+                nextText: 42
+            },
+            {
+                text: 'Magic Lamp verwenden',
+                requiredState: (currentState) => currentState.magicLamp, // requires to have certain equipment for this option
+                nextText: 43
+            },
+            {
+                text: 'Magic Instrument verwenden',
+                requiredState: (currentState) => currentState.magicInstrument, // requires to have certain equipment for this option
+                nextText: 44
+            },
+            {
+                text: 'Nein, den Gegenstand nicht verwenden',
+                nextText: 45
+            }
+        ]
+    },
+    {
+        id: 45,
+        text: 'Ohne den Gegenstand verwendet zu haben stehst du weiter am Marktplatz. Was machst du?',
+        options: [
+            {
+                text: 'Zum Wald',
+                nextText: 2
+            },
+            {
+                text: 'Zum Schloss',
+                nextText: 3
+            },
+            {
+                text: 'Schmiede des Marktplatzes für das allgemeine Volk',
+                nextText: 10
+            },
+            {
+                text: 'Schlafstube Ho-Tel',
+                nextText: 11
+            }
+        ]
+    },
+    {
+        id: 43,
+        text: 'Die Lampe verwandelt sich in eine gefährliche riesen Schlange und verschlingt dich. Du stirbst',
+        options: [
+            {
+                text: 'Restart',
+                nextText: 0 //0 symbolises restarting the Game
+            }
+        ]
+    },
+    {
+        id: 44,
+        text: 'Die Musik die du spielst lässt dich auf die Größe einer Maus schrumpfen. Kaum realisierst du was passiert ist frisst dich eine Katze. Du bist tot.',
+        options: [
+            {
+                text: 'Restart',
+                nextText: 0 //0 symbolises restarting the Game
+            }
+        ]
+    },
+    {
+        id: 42,
+        text: 'Wohin willst du mit dem Magic Carpet fliegen?',
+        options: [
+            {
+                text: 'Zum Schloss',
+                nextText: 12
+            },
+            {
+                text: 'Zum nächsten Dorf',
+                nextText: 13
             }
         ]
     },
@@ -495,7 +583,7 @@ const dataset = [
         text: 'Ohje! Das war eigentlich für den König gedacht aber es wurde vertauscht.' +
             ' Beim Verssuch den König zu vergiften wurdest du vergiftet.' +
             'Du stribst',
-        options:[
+        options: [
             {
                 text: 'Restart',
                 nextText: 0 //0 symbolises restarting the Game
