@@ -260,7 +260,8 @@ const dataset = [
     {
         id: 17,
         text: 'Nachdem du an der Tür angeklopft hast öffnet dir die Garde das Tor und die Königsfamilie möchte dich empfangen. Dein nächster Schritt?',
-        type: "default",
+        type: "npcNode",
+        npc: "Königsfamilie",
         options: [
             {
                 text: 'Die Königsfamilie darum bitten, dich zum Ritter zu schlagen',

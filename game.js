@@ -1,6 +1,8 @@
 import {Player} from "./game/player.js";
 import {Inventory} from "./game/player.js";
 import {Graph} from "./game/graph.js";
+import {textNodes} from "./game/data.js";
+
 //import vis from "./node_modules/vis/dist/vis.js";
 
 /*
@@ -54,12 +56,13 @@ function startGame() {
 
 
 function showTextNode(textNodeIndex) {
-    g.addNode(textNodeIndex)                        //adding nodes sometimes leads to inconsistencies and error!
+    console.log("npcnodes", textNodes.find(textNode => textNode.id === textNodeIndex).type)
+    g.addNode(textNodeIndex, textNodes.find(textNode => textNode.id === textNodeIndex).type)                        //adding nodes sometimes leads to inconsistencies and error!
     visualization(g.AdjList.get(textNodeIndex).ID)
     g.printGraph()
 
 
-    switch(g.AdjList.get(textNodeIndex).nodeType) {
+    switch(g.AdjList.get(textNodeIndex).type) {
         case "timeNode":
             // timeNode function
             break;
@@ -67,6 +70,9 @@ function showTextNode(textNodeIndex) {
             // timeNode function
             break;
         case "npcNode":
+            npcExchange(g.AdjList.get(textNodeIndex), p, "yes", textNodeIndex);
+console.log("npc")
+p.printPlayer()
             // timeNode function
             break;
         default:
@@ -109,6 +115,14 @@ function selectOption(option) {
     }
     showTextNode(nextTextNodeId)
 
+}
+
+function npcExchange(npcNode, player, reaction, textNodeIndex) {
+    console.log(g.AdjList.get(textNodeIndex))
+    if (g.AdjList.get(textNodeIndex).npc === "Königsfamilie") {
+        player.interactionNPC(npcNode, reaction);
+        p.printPlayer();
+    }
 }
 
 
