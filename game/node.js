@@ -6,6 +6,7 @@ class Node {
         this.ID = nodeID;
         this.text = textNodes.find(textNode => textNode.id === nodeID).text //the node gets data from textNodes according to the ID
         this.options = textNodes.find(textNode => textNode.id === nodeID).options
+        this.type = textNodes.find(textNode => textNode.id === nodeID).type
     }
     addEdge(nextNodeID){
         this.edge.push(nextNodeID); // the number of the edge is the number of the node the edge is directed towards
@@ -27,10 +28,15 @@ export class probabilityNode extends Node {
     }
 }
 export class npcNode extends Node {
-    constructor(nodeID, npc) {
+    constructor(nodeID) {
         super(nodeID, textNodes);
-        this.npc = npc;
+        this.npc = textNodes.find(textNode => textNode.id === nodeID).npc;
+
+            this.npcitem = 'Schild';
+            this.npcmoney = 20;
+
     }
+
 }
 export class defaultNode extends Node {
     constructor(nodeID) {
