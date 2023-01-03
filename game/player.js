@@ -10,7 +10,8 @@ export class Player {
     }
     interactionNPC(NPC, reaction) {
         if (reaction === "yes") {
-            this.inventory.addItem(NPC.item)
+            console.log(NPC.npcitem)
+            this.inventory.addItem(NPC.npcitem)
         }
         console.log(this.inventory)
     }

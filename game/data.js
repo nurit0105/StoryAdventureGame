@@ -4,6 +4,7 @@ const dataset = [
         text: 'Willkommen beim Fantasy Adventure Game. Es ist dein erster Tag im neuen Dorf und du befindest dich am Marktplatz. Wohin willst du?',
         image: "https://us.123rf.com/450wm/algolonline/algolonline1211/algolonline121100006/16245775-medieval-oder-fantasy-stadtplatz-und-marktplatz-3d-%C3%BCbertrug-digital-abbildung.jpg",
         type: "default",
+        nodename: "Start",
         options: [
             {
                 text: 'Richtung Wald',
@@ -22,6 +23,7 @@ const dataset = [
         text: 'Du läufst durch den Wald und findest Pilze. Hebst du sie auf?',
         image: "https://www.tierwelt.ch/fileadmin/user_upload/tierwelt/artikel-bilder/woodwing/18-2022/88324be8351701e4a2e08bb2e9801331a7edc59865c4ad6b6994b97d143ea5cc.jpg",
         type: "default",
+        nodename: "Wald",
         options: [
             {
                 text: 'Pilze mitnehmen',
@@ -39,6 +41,7 @@ const dataset = [
         text: 'Du bekommst sehr starken Hunger!',
         image: "https://medlexi.de/images/thumb/Hunger.jpg/400px-Hunger.jpg",
         type: "default",
+        nodename: "Hunger",
         options: [
             {
                 text: 'Die gesammelten Pilze essen',
@@ -57,6 +60,7 @@ const dataset = [
         text: 'Die Pilze waren giftig! Du halluzinierst und stirbst.',
         image: "https://thumbs.dreamstime.com/b/t%C3%BCr-zu-den-halluzinationen-buntes-licht-und-pilze-190072429.jpg",
         type: "default",
+        nodename: "Gift",
         options: [
             {
                 text: 'Restart',
@@ -69,6 +73,7 @@ const dataset = [
         text: 'Du findest mitten im Wald ein einsames Restaurant.',
         image: "https://img2.goodfon.com/original/1680x1050/7/39/anime-les-reka-dom.jpg",
         type: "default",
+        nodename: "Restaurant",
         options: [
             {
                 text: 'hineingehen',
@@ -261,6 +266,7 @@ const dataset = [
         id: 17,
         text: 'Nachdem du an der Tür angeklopft hast öffnet dir die Garde das Tor und die Königsfamilie möchte dich empfangen. Dein nächster Schritt?',
         type: "npcNode",
+        image: "https://cdn.vegaoo.de/images/rep_art/gra/310/2/310207/mittelalterliches-krieger-schild-kostumzubehor-mittelalter-braun-40cm.jpg",
         npc: "Königsfamilie",
         options: [
             {
