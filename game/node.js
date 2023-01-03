@@ -7,6 +7,8 @@ class Node {
         this.text = textNodes.find(textNode => textNode.id === nodeID).text //the node gets data from textNodes according to the ID
         this.options = textNodes.find(textNode => textNode.id === nodeID).options
         this.type = textNodes.find(textNode => textNode.id === nodeID).type
+        this.nodename = textNodes.find(textNode => textNode.id === nodeID).nodename
+        this.image = textNodes.find(textNode => textNode.id === nodeID).image
     }
     addEdge(nextNodeID){
         this.edge.push(nextNodeID); // the number of the edge is the number of the node the edge is directed towards

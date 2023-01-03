@@ -18,7 +18,7 @@ const edges = new vis.DataSet(options);
 
 function visualization(nodeID) {
         nodes.add([
-            {id: nodeID, label: String(g.AdjList.get(nodeID).ID)},
+            {id: nodeID, label: String(g.AdjList.get(nodeID).nodename)},
         ]);
         for (const edge of g.AdjList.get(nodeID).getEdge()) {
             edges.add([
@@ -103,6 +103,15 @@ function showOption(option) {
 }
 
 function selectOption(option) {
+
+    //clear screen
+    const element = document.getElementById("placehere");
+    if (element.firstElementChild !== null) {        element.removeChild(element.firstElementChild);
+    }
+
+
+
+
     const nextTextNodeId = option.nextText
     state = Object.assign(state, option.setState)
 
@@ -118,11 +127,23 @@ function selectOption(option) {
 }
 
 function npcExchange(npcNode, player, reaction, textNodeIndex) {
-    console.log(g.AdjList.get(textNodeIndex))
+    console.log("npcnode?", g.AdjList.get(textNodeIndex))
     if (g.AdjList.get(textNodeIndex).npc === "Königsfamilie") {
         player.interactionNPC(npcNode, reaction);
         p.printPlayer();
     }
+    console.log("imag§", g.AdjList.get(textNodeIndex).options)
+    displayPicture(g.AdjList.get(textNodeIndex).image);
+}
+
+function displayPicture(urlpicture) {
+    console.log("urlpicture?", urlpicture)
+
+    var elem = document.createElement("img");
+    elem.setAttribute("height", "76");
+    elem.setAttribute("width", "102");
+    elem.src = urlpicture;
+    document.getElementById("placehere").appendChild(elem);
 }
 
 
