@@ -102,3 +102,17 @@ header {
     background: #236863;
     color: white;
 }
+
+.item {
+    padding-top: 25px;
+    padding-right: 3px;
+    padding-bottom: 1px;
+    padding-left: 8px;
+}
+
+.text{
+    padding-top: 5px;
+    padding-right: 3px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+}
