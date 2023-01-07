@@ -70,7 +70,7 @@ function showTextNode(textNodeIndex) {
             // timeNode function
             break;
         case "npcNode":
-            npcExchange(g.AdjList.get(textNodeIndex), p, "yes", textNodeIndex);
+            npcExchange(g.AdjList.get(textNodeIndex), p, textNodeIndex);
 console.log("npc")
 p.printPlayer()
             // timeNode function
@@ -126,14 +126,14 @@ function selectOption(option) {
 
 }
 
-function npcExchange(npcNode, player, reaction, textNodeIndex) {
-    console.log("npcnode?", g.AdjList.get(textNodeIndex))
+function npcExchange(npcNode, player, textNodeIndex) {
     if (g.AdjList.get(textNodeIndex).npc === "Königsfamilie") {
-        player.interactionNPC(npcNode, reaction);
+        console.log("npcnode?", g.AdjList.get(textNodeIndex))
+        buttonItem(g.AdjList.get(textNodeIndex), player);
         p.printPlayer();
     }
     console.log("imag§", g.AdjList.get(textNodeIndex).options)
-    displayPicture(g.AdjList.get(textNodeIndex).image);
+
 }
 
 function displayPicture(urlpicture) {
@@ -143,7 +143,29 @@ function displayPicture(urlpicture) {
     elem.setAttribute("height", "76");
     elem.setAttribute("width", "102");
     elem.src = urlpicture;
+
+
     document.getElementById("placehere").appendChild(elem);
+
+
+    const optionButtonsElement = document.getElementById('option-buttons')
+
+}
+
+function buttonItem(node, player) {
+    let button = document.createElement('button')
+    button.innerHTML = `<img src=${node.image}  alt="Item"  width="102" height="76"/>`;
+    button.classList.add('btn')
+    button.addEventListener('click', () => selectItem(node, player), {once : true})
+    optionButtonsElement.appendChild(button)
+    document.getElementById("placehere").appendChild(button);
+}
+
+function selectItem(node, player) {
+    console.log("urlpicture?", node)
+    player.interactionNPC(node, "yes");
+    console.log("urlpicture?")
+
 }
 
 
