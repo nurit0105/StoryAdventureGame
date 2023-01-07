@@ -1,4 +1,6 @@
-import {textNodes} from "./data.js";
+import {
+    textNodes
+} from "./data.js";
 
 class Node {
     constructor(nodeID, textNodes) {
@@ -9,11 +11,13 @@ class Node {
         this.type = textNodes.find(textNode => textNode.id === nodeID).type
         this.nodename = textNodes.find(textNode => textNode.id === nodeID).nodename
         this.image = textNodes.find(textNode => textNode.id === nodeID).image
+        this.image2 = textNodes.find(textNode => textNode.id === nodeID).image2
+
     }
-    addEdge(nextNodeID){
+    addEdge(nextNodeID) {
         this.edge.push(nextNodeID); // the number of the edge is the number of the node the edge is directed towards
     }
-    getEdge(){
+    getEdge() {
         return this.edge;
     }
 }
@@ -33,9 +37,9 @@ export class npcNode extends Node {
     constructor(nodeID) {
         super(nodeID, textNodes);
         this.npc = textNodes.find(textNode => textNode.id === nodeID).npc;
-
-            this.npcitem = 'Schild';
-            this.npcmoney = 20;
+        this.npcitem1 = 'Schild';
+        this.npcitem2 = 'Schwert';
+        this.npcmoney = 20;
 
     }
 

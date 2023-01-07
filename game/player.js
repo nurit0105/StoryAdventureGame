@@ -8,14 +8,14 @@ export class Player {
         this.defense = 10;
         this.money = 100;
     }
-    interactionNPC(NPC, reaction) {
+
+    interactionNPC(NPCitem, reaction) {
         if (reaction === "yes") {
-            console.log(NPC.npcitem)
-            this.inventory.addItem(NPC.npcitem)
+            console.log(NPCitem)
+            this.inventory.addItem(NPCitem)
         }
         console.log(this.inventory)
     }
-
 
     printPlayer() {
         console.log(this);
@@ -41,9 +41,9 @@ export class Inventory {
     }
 }
 
-export class NPC {
+/*export class NPC {
     constructor() {
         this.item = 'Schild';
         this.money = 20;
     }
-}
+}*/
