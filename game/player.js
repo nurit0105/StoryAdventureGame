@@ -11,6 +11,7 @@ export class Player {
         this.value = 0
     }
 
+
     addItemInventory(item) {
         this.inventory.addItem(item)
     }
