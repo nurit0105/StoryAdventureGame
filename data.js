@@ -51,7 +51,7 @@ const dataset = [
     },
     {
         id: 29,
-        text: 'Auf deinem Pfad stolperst du. Du schaust zu boden. Ein verrosteter Speer liegt dir zu Füßen. Hebst du ihn auf?',
+        text: 'Auf deinem Pfad stolperst du. Du schaust zu Boden. Ein verrosteter Speer liegt dir zu Füßen. Hebst du ihn auf?',
         options: [
             {
                 text: 'Speer aufheben',

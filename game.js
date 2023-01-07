@@ -2,7 +2,7 @@ import {textNodes} from "./data.js";
 import {Player} from "./player.js";
 import {Inventory} from "./player.js";
 
-//import vis from "./node_modules/vis/dist/vis.js";
+// import vis from "./node_modules/vis/dist/vis.js";
 
 class Node {
     constructor(nodeID, nodeType) {
@@ -119,11 +119,11 @@ Game - based on old code // maybe individual class
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
 
-let state = {}
+let state = {} // the current state symbolises the Player's Inventory
 // document.getElementById("statePrint").innerHTML = state; first try for visualizing the Inventory
 
 function startGame() {
-    state = {} // the current state symbolises the Player's Inventory
+    state = {}
     showTextNode(1)
 }
 
