@@ -50,18 +50,17 @@ let p = new Player("thomas", "blue");
 p.printPlayer();
 
 function startGame() {
-
     state = {}
-    showTextNode(1)
+    displayGame(1)
 }
 
-
-function showTextNode(textNodeIndex) {
-    console.log("npcnodes", textNodes.find(textNode => textNode.id === textNodeIndex).type)
+function displayGame(textNodeIndex) {
+    console.log("index", textNodeIndex)
     g.addNode(textNodeIndex, textNodes.find(textNode => textNode.id === textNodeIndex).type) //adding nodes sometimes leads to inconsistencies and error!
-    visualization(g.AdjList.get(textNodeIndex).ID)
     g.printGraph()
+    visualization(g.AdjList.get(textNodeIndex).ID)
 
+    //p.printPlayer()
 
     switch (g.AdjList.get(textNodeIndex).type) {
         case "timeNode":
@@ -71,7 +70,8 @@ function showTextNode(textNodeIndex) {
             // probabilityNode function
             break;
         case "npcNode":
-            npcExchange(g.AdjList.get(textNodeIndex), p, textNodeIndex);
+            npcMeeting(g.AdjList.get(textNodeIndex), p);
+
             // npcNode function
             break;
         default:
@@ -91,7 +91,7 @@ function showTextNode(textNodeIndex) {
             const button = document.createElement('button')
             button.innerText = option.text
             button.classList.add('btn')
-            button.addEventListener('click', () => selectOption(option))
+            button.addEventListener('click', () => selectOption(option, p))
             optionButtonsElement.appendChild(button)
         }
     })
@@ -103,29 +103,35 @@ function showOption(option) {
 
 function selectOption(option) {
 
-    //clear screen
-    const element1 = document.getElementById("item1");
-    if (element1.firstElementChild !== null) {
-        element1.removeChild(element1.firstElementChild);
+    //Remove item buttons
+    const element = document.getElementById("item");
+    let child = element.lastElementChild;
+    while (child) {
+        element.removeChild(child);
+        child = element.lastElementChild;
     }
-    const element2 = document.getElementById("item2");
-    if (element2.firstElementChild !== null) {
-        element2.removeChild(element2.firstElementChild);
-    }
-
 
 
     const nextTextNodeId = option.nextText
     state = Object.assign(state, option.setState)
 
-    if (nextTextNodeId <= 0) { //Everything equal or smaller than 0 restarts the Game
+
+    if ( p.hp < 100 && p.value > 0) { //HP equal or smaller than 0 restarts the Game
+        p.value = p.value + 1
+        return displayGame(14)
+    }
+
+
+    if (nextTextNodeId <= 0 ) { //Everything equal or smaller than 0 restarts the Game
         for (let i = 0; i < g.AdjList.size; i++) {
             edges.clear()
             nodes.clear()
         }
         return startGame()
     }
-    showTextNode(nextTextNodeId)
+
+
+    displayGame(nextTextNodeId)
 
 }
 
@@ -134,39 +140,30 @@ function selectOption(option) {
 
 //NPC functions
 
-function npcExchange(npcNode, player, textNodeIndex) {
-    if (g.AdjList.get(textNodeIndex).npc === "Königsfamilie") {
-        console.log("npcnode?", g.AdjList.get(textNodeIndex))
-        buttonItem(g.AdjList.get(textNodeIndex), player);
-        p.printPlayer();
-    }
-    console.log("imag§", g.AdjList.get(textNodeIndex).options)
+function npcMeeting(npcNode, player) {
+    if (npcNode.items != null) {displayItemButtons(npcNode, player);}  //add item buttons only if npc has items
+    if (npcNode.stats != null) {player.playerFight(npcNode)
+
+    }  //fight
 }
 
-function buttonItem(node, player) {
-    let button1 = document.createElement('button')
-    button1.innerHTML = `<img src=${node.image}  alt="Item"  width="102" height="76"/>`;
-    button1.classList.add('btn')
-    button1.addEventListener('click', () => selectItem(node.npcitem1, player), {
-        once: true
-    })
 
-    let button2 = document.createElement('button')
-    button2.innerHTML = `<img src=${node.image2}  alt="Item"  width="102" height="76"/>`;
-    button2.classList.add('btn')
-    button2.addEventListener('click', () => selectItem(node.npcitem2, player), {
-        once: true
-    })
 
-    document.getElementById("item1").appendChild(button1);
-    document.getElementById("item2").appendChild(button2);
+
+//Functions to display items and create buttons
+function displayItemButtons(node, player) {
+    node.items.forEach(item => createItemButton(item, player)); //go through all items in the node and add buttons for each item
+}
+function createItemButton(item, player) {
+    let button = document.createElement('itemButton')
+    button.innerHTML = `<img src=${item.image}  alt="Item"  width="102" height="76"/>`  //add image to button
+    button.classList.add('btn')
+    button.addEventListener('click', () => player.addItemInventory(item.item), {once: true})  //event listener calls function to add item to player inventory
+    document.getElementById("item").appendChild(button);  //add buttons to html document
 }
 
-function selectItem(node, player) {
-    console.log("urlpicture?", node)
-    player.interactionNPC(node, "yes");
-    console.log("urlpicture?")
-}
+
+
 
 
 startGame()

@@ -162,16 +162,19 @@ const dataset = [
     {
         id: 28,
         text: 'Mit deiner neuen Waffe meldest du dich zu einem Kampf an. Du stehst deinem Gegner jetzt gegenüber.',
-        type: "default",
+        type: "npcNode",
+        stats: [
+            {
+                attack: 110,
+            }
+        ],
         options: [
             {
                 text: 'kämpfen!',
-                requiredState: (currentState) => currentState.axe,
                 nextText: 14
             },
             {
                 text: 'kämpfen!',
-                requiredState: (currentState) => currentState.sword,
                 nextText: 15
             }
         ]
@@ -266,8 +269,21 @@ const dataset = [
         id: 17,
         text: 'Nachdem du an der Tür angeklopft hast öffnet dir die Garde das Tor und die Königsfamilie möchte dich empfangen. Dein nächster Schritt?',
         type: "npcNode",
-        image: "https://cdn.vegaoo.de/images/rep_art/gra/310/2/310207/mittelalterliches-krieger-schild-kostumzubehor-mittelalter-braun-40cm.jpg",
-        image2: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Trp-Sword-14226124129-v06.png/800px-Trp-Sword-14226124129-v06.png",
+        items: [
+            {
+                item: "Schwert",
+                image: "https://cdn.vegaoo.de/images/rep_art/gra/310/2/310207/mittelalterliches-krieger-schild-kostumzubehor-mittelalter-braun-40cm.jpg"},
+            {
+                item: "Schild",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Trp-Sword-14226124129-v06.png/800px-Trp-Sword-14226124129-v06.png"
+            },
+            {
+                item: "Schwert",
+                image: "https://cdn.vegaoo.de/images/rep_art/gra/310/2/310207/mittelalterliches-krieger-schild-kostumzubehor-mittelalter-braun-40cm.jpg"},
+            {
+                item: "Schwert",
+                image: "https://cdn.vegaoo.de/images/rep_art/gra/310/2/310207/mittelalterliches-krieger-schild-kostumzubehor-mittelalter-braun-40cm.jpg"},
+            ],
         npc: "Königsfamilie",
         options: [
             {
