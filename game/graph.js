@@ -9,7 +9,7 @@ export class Graph {
         this.activeNode = 0; // the first active node has the nodeID 0
     }
     addNode(nodeID, nodeType) {
-        switch(nodeType) {
+        switch (nodeType) {
             case "timeNode":
                 this.AdjList.set(nodeID, new timeNode(nodeID)); //create new node
                 break;
@@ -23,7 +23,8 @@ export class Graph {
                 this.AdjList.set(nodeID, new defaultNode(nodeID)); //create new node
         }
         this.AdjList.get(nodeID).options.forEach(option => {
-            this.AdjList.get(nodeID).addEdge(option.nextText);})
+            this.AdjList.get(nodeID).addEdge(option.nextText);
+        })
         this.activeNode = nodeID;
     }
 
@@ -50,4 +51,3 @@ export class Graph {
     }
     return numberOfEdges;
 }*/
-

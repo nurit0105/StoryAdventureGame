@@ -267,6 +267,7 @@ const dataset = [
         text: 'Nachdem du an der Tür angeklopft hast öffnet dir die Garde das Tor und die Königsfamilie möchte dich empfangen. Dein nächster Schritt?',
         type: "npcNode",
         image: "https://cdn.vegaoo.de/images/rep_art/gra/310/2/310207/mittelalterliches-krieger-schild-kostumzubehor-mittelalter-braun-40cm.jpg",
+        image2: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Trp-Sword-14226124129-v06.png/800px-Trp-Sword-14226124129-v06.png",
         npc: "Königsfamilie",
         options: [
             {
