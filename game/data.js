@@ -89,6 +89,7 @@ const dataset = [
         text: 'Du hast solange im Wald nach Essen gesucht, dass du dich verlaufen hast. Du findest aus dem Wald nicht hinaus und stirbst an Hunger.',
         image: "https://s1.1zoom.me/big0/588/346054-blackangel.jpg",
         type: "default",
+        nodename: "Wald",
         options: [
             {
                 text: 'Restart',
@@ -101,6 +102,7 @@ const dataset = [
         text: 'Das Restaurant ist fast voll. Drinnen bekommst du eine gute Mahlzeit. Plötzlich beginnen alle sich zu prügeln. Der Ausgang ist blockiert. Du siehst einen Tunnel in der Ecke',
         image: "https://pnpnews.de/wp-content/uploads/2019/06/Eberron5e.jpg",
         type: "default",
+        nodename: "Restaurant",
         options: [
             {
                 text: 'durch den Tunnel gehen',
@@ -112,6 +114,8 @@ const dataset = [
         id: 4,
         text: 'Du befindest dich am Marktplatz. Der Marktplatz ist sehr belebt. Du hast verschiedene Sachen, die du dir ansehen kannst. Wohin gehst du?',
         type: "default",
+        nodename: "Marktplatz",
+
         options: [
             {
                 text: 'Geschäft der Mystik',
@@ -131,6 +135,7 @@ const dataset = [
         id: 9,
         text: 'Du kaufst dir einen magischen schwarzen Teppich und entscheidest dich mit dem Teppich weiter zu fliegen',
         type: "default",
+        nodename: "Teppich",
         options: [
             {
                 text: 'zum Schloss reisen',
@@ -145,6 +150,8 @@ const dataset = [
     {
         id: 10,
         text: 'In der Marktschmiede kaufst du dir eine Waffe',
+        nodename: "Marktschmiede",
+
         type: "default",
         options: [
             {
@@ -162,6 +169,8 @@ const dataset = [
     {
         id: 28,
         text: 'Mit deiner neuen Waffe meldest du dich zu einem Kampf an. Du stehst deinem Gegner jetzt gegenüber.',
+        nodename: "Kampf",
+
         type: "npcNode",
         stats: [
             {
@@ -182,6 +191,8 @@ const dataset = [
     {
         id: 11,
         text: 'Du hast dir ein Zimmer in der Schlafstube genommen. Du schläfst ein und wachst plötzlich wieder im Wald auf.',
+        nodename: "Schlafstube",
+
         type: "default",
         options: [
             {
@@ -193,6 +204,8 @@ const dataset = [
     {
         id: 12,
         text: 'Du fliegst mit dem Teppich zum Schloss.',
+        nodename: "Schloss",
+
         type: "default",
         options: [
             {
@@ -205,6 +218,8 @@ const dataset = [
         id: 13,
         text: 'Du fällst vom schwarzen magischen Teppich bevor du im nächsten Dorf ankommen konntest und stirbst von der Fallhöhe.',
         type: "default",
+        nodename: "Dorf",
+
         options: [
             {
                 text: 'Restart',
@@ -215,6 +230,8 @@ const dataset = [
     {
         id: 14,
         text: 'Du verlierst beim Kampf und stirbst!',
+        nodename: "Kampf",
+
         type: "default",
         options: [
             {
@@ -226,6 +243,8 @@ const dataset = [
     {
         id: 15,
         text: 'Du gewinnst den Kampf und bekommst 1000 Stück Gold',
+        nodename: "Kampf",
+
         type: "default",
         options: [
             {
@@ -238,6 +257,8 @@ const dataset = [
         id: 3,
         text: 'Das Schloss hat einen großen Fluss um sich herum, mit einer Mauer und einem einzigen Tor. Wie kommst du rein?',
         type: "default",
+        nodename: "Tor",
+
         options: [
             {
                 text: 'Über die Mauer klettern',
@@ -257,6 +278,8 @@ const dataset = [
         id: 16,
         text: 'Beim Versuch über die Mauer zu klettern denkt die Garde des Schlosses, dass du ein Eindringling bist. ' +
             'Sie schießen einen großen Pfeil auf dich und du stirbst.',
+        nodename: "Mauer",
+
         type: "default",
         options: [
             {
@@ -269,6 +292,8 @@ const dataset = [
         id: 17,
         text: 'Nachdem du an der Tür angeklopft hast öffnet dir die Garde das Tor und die Königsfamilie möchte dich empfangen. Dein nächster Schritt?',
         type: "npcNode",
+        nodename: "Tür",
+
         items: [
             {
                 item: "Schwert",
@@ -305,6 +330,8 @@ const dataset = [
         text: 'Der König willigt ein dich zum Ritter zu schlagen. Allerdings ist er dabei so besoffen, dass er ausruscht' +
             'und statt dich zum Ritter zu schlagen dabei dich ersticht und du stirbst.',
         type: "default",
+        nodename: "König",
+
         options: [
             {
                 text: 'Restart',
@@ -316,6 +343,8 @@ const dataset = [
         id: 19,
         text: 'Du hast die Bewerbung bestanden! Du arbeitest ab sofort für die Königsfamilie, have fun!',
         type: "default",
+        nodename: "Bewerbung",
+
         options: [
             {
                 text: 'Restart',
@@ -327,6 +356,8 @@ const dataset = [
         id: 21,
         text: 'Nach dem Empfang wirst du zum Abendessen eingeladen. Was trinkst du?',
         type: "default",
+        nodename: "Abendessen",
+
         options: [
             {
                 text: 'Wein',
@@ -345,9 +376,11 @@ const dataset = [
     {
         id: 20,
         text: 'Ohje! Das war eigentlich für den König gedacht aber es wurde vertauscht.' +
-            ' Beim Verssuch den König zu vergiften wurdest du vergiftet.' +
+            ' Beim Versuch den König zu vergiften wurdest du vergiftet.' +
             'Du stribst',
         type: "default",
+        nodename: "König",
+
         options:[
             {
                 text: 'Restart',
@@ -358,6 +391,8 @@ const dataset = [
     {
         id: 22,
         text: 'Weiter zum Essen. Erbsen oder Schnitzel zuerst?',
+        nodename: "Essen",
+
         type: "default",
         options: [
             {
@@ -375,6 +410,8 @@ const dataset = [
         text: 'Du bist fertig mit dem Essen und bist vom Schloss hinausgegangen. Jetzt befindest du dich im Gelände des Schlosses.' +
             'Wohin willst du als nächstes gehen?',
         type: "default",
+        nodename: "Essen",
+
         options: [
             {
                 text: 'Wieder zurück zum Marktplatz',
@@ -394,6 +431,8 @@ const dataset = [
         id: 25,
         text: 'Du schaust dich im Gelände des Schlosses um und möchtest gerne etwas unternehmen:',
         type: "default",
+        nodename: "Schloss",
+
         options: [
             {
                 text: 'Zur Schmiede der Königsfamilie gehen und dich als Schmied bewerben',
@@ -413,6 +452,7 @@ const dataset = [
         id: 23,
         text: 'Du gehst beim Gelände spazieren und dir passiert weiter nichts. Das Spiel ist zu Ende und das ist die langweiligste Option',
         type: "default",
+        nodename: "Schloss",
         options: [
             {
                 text: 'Restart',
@@ -424,6 +464,8 @@ const dataset = [
         id: 26,
         text: 'Im Fluss zu schwimmen welcher das Schloss bewacht ist keine kluge Idee. Ein Alligator zerfleischt dich und du stirbst.',
         type: "default",
+        nodename: "Fluss",
+
         options: [
             {
                 text: 'Restart',

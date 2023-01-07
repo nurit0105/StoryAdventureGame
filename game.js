@@ -2,6 +2,8 @@ import {Player} from "./game/player.js";
 import {Inventory} from "./game/player.js";
 import {Graph} from "./game/graph.js";
 import {textNodes} from "./game/data.js";
+//import {textNodes} from "./dataSecondGame.js"; //funktioniert wenn man andere daten auskommentiert - auch in node.js
+
 //import vis from "./node_modules/vis/dist/vis.js";
 
 /*

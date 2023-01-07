@@ -1,4 +1,6 @@
 import {textNodes} from "./data.js";
+//import {textNodes} from "../dataSecondGame.js";
+
 
 class Node {
 
