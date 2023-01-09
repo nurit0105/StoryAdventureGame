@@ -604,7 +604,7 @@ const dataset2 = [
             'Hause gegangen. Samstag Nacht kam ein Mann zu Besuch. John Tent ließ ihn rein, weil dieser Mann einer seiner Stewards war. ' +
             'Der Mann führte anfangs ein normales Gespräch bei Whiskey mit John Tent und hatte ein Messer in seiner Hosentasche versteckt.' +
             'Und dann nahm er das Messer und stach auf John Tent ein. Der Grund: Eifersucht. Steffanie Muphli ist doch seine Freundin.' +
-            'Erschrocken darüber was er gerade getan hat steckte er das Messr wieder ein und nahm die Whiskeyflasche zum trinken mit. Danke Dedektiv, du hast den Fall gelöst',
+            'Erschrocken darüber was er gerade getan hat steckte er das Messer wieder ein und nahm die Whiskey Flasche zum trinken mit. Danke Detektiv, du hast den Fall gelöst',
         options: [
             {
                 text: 'restart',
