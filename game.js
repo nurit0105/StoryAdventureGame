@@ -17,6 +17,20 @@ const options = {
 const nodes = new vis.DataSet(options);
 const edges = new vis.DataSet(options);
 
+function playWaldMusic(){
+    var audio = new Audio('music/wald.mp3');
+    audio.play();
+}
+
+function playSchlossMusic(){
+    var audio = new Audio('music/schloss.mp3');
+    audio.play();
+}
+function playMarktplatzMusic(){
+    var audio = new Audio('music/marktplatz.mp3');
+    audio.play();
+}
+
 function visualization(nodeID) {
     nodes.add([{
         id: nodeID,
