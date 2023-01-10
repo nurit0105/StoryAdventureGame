@@ -2,6 +2,12 @@
     box-sizing: border-box;
     font-family: Arial;
 }
+.audio {
+  display: flex;
+  justify-content: space-around;
+  background-color:#122d2b;
+  font-color: white;
+}
 
 body {
     padding: 0;
