@@ -9,6 +9,7 @@ import {DetectiveStory} from "./game/dataDetectiveStory.js";
 //node namen verbessern
 //die drei nodetypen an anderen stellen einfügen und story entsprechend anpassen - müsste man ausprobieren
 //node 17 redundante items entfernen
+//wir brauchen nur fantasyGame.html fürs spiel
 
 
 /*
