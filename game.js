@@ -4,10 +4,11 @@ import {FantasyStory} from "./game/dataFantasyStory.js";
 import {DetectiveStory} from "./game/dataDetectiveStory.js";
 
 
-//TO DO:
+//TO DO: hauptsächlich in den daten
 //ID 8 im FantasyDataSet führt im Kreis
 //node namen verbessern
-//die drei nodetypen an anderen stellen einfügen und story entsprechend anpassen
+//die drei nodetypen an anderen stellen einfügen und story entsprechend anpassen - müsste man ausprobieren
+//node 17 redundante items entfernen
 
 
 /*
@@ -310,7 +311,7 @@ function miniGame() {
 
     button.addEventListener('click', () => {
         clicks++;
-        clicksElement.textContent = clicks;
+        //clicksElement.textContent = clicks;
     });
 
     const countdown = setInterval(() => {
