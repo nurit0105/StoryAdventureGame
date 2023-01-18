@@ -5,7 +5,7 @@ import {DetectiveStory} from "./game/dataDetectiveStory.js";
 
 
 //TO DO: hauptsächlich in den daten
-//ID 8 im FantasyDataSet führt im Kreis
+//ID 8 im FantasyDataSet führt im Kreis - in der detektive story gig es glaube ich auch einige die so sind
 //node namen verbessern
 //die drei nodetypen an anderen stellen einfügen und story entsprechend anpassen - müsste man ausprobieren
 //node 17 redundante items entfernen
