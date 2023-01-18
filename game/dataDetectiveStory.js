@@ -1,8 +1,9 @@
-const dataset2 = [
+const dataset = [
     {
         id: 1,
         text: 'Willkommen beim Detective Game. Deine Aktionen haben Konsequenzen. Du sitzt in deinem Detektiv-Büro und CASE H kommt rein.' +
             'Nimmst du dich dem Mordfall an? (TW: Mord, Blut, Gewalt)',
+        type: "default",
         options: [
             {
                 text: 'Ja',
@@ -16,6 +17,7 @@ const dataset2 = [
     {
         id: 2,
         text: 'Ist eine Detektiv-Story nichts für dich? Probier es vielleicht mit unserem Fantasy Game.',
+        type: "default",
         options: [
             {
                 text: 'restart',
@@ -27,6 +29,7 @@ const dataset2 = [
         id:3,
         text: 'Der Case H bringt dich in ein Hotelzimmer. Im Hotelzimmer liegt ein Mann ermordet. Noch ist nicht festgestellt was die Mordwaffe ist' +
             'oder wer für diese Tat verantwortlich ist. Wo suchst du nach Hinweisen?',
+        type: "default",
         options:[
             {
                 text:'Zeugen befragen',
@@ -43,6 +46,7 @@ const dataset2 = [
     {
         id: 41,
         text: 'Wen möchtest du zu den Geschehnissen befragen?',
+        type: "default",
         options: [
             {
                 text: 'Putzkraft',
@@ -57,6 +61,7 @@ const dataset2 = [
         id: 411,
         text: 'Soweit ich weiß war er übers Wochenende da. Jeden Morgen bin ich gekommen um sein Zimmer, so wie alle Zimmer, zu putzen.' +
             'Am ersten Morgen vor seiner Anreise, gestern und naja heute bevor ich aufräumen konnte hab ich ihn tot gefunden.',
+        type: "default",
         options: [
             {
                 text: 'Ist Ihnen etwas bestimmtes aufgefallen?',
@@ -75,6 +80,7 @@ const dataset2 = [
     {
         id: 4111,
         text: 'Es war jedes Mal extrem unaufgeräumt. Ich glaub er hatte sehr viel Besuch. Männlichen. Weiblichen. Viel Besuch. Das ist alles was ich weiß',
+        type: "default",
         options: [
             {
                 text: 'Danke für Ihre Zeit, ich befrage jetzt die Hotel-Rezeption',
@@ -98,6 +104,7 @@ const dataset2 = [
         id: 412,
         text: 'Schrecklich für den Ruf unseres Hotels. Schrecklich, Schrecklich und einfach nur Furchtbar. Wir werden weniger Kunden in den nächsten' +
             'Monaten haben. Schrecklich.',
+        type: "default",
         options: [
             {
                 text: 'Ist Ihnen etwas bestimmtes aufgefallen?',
@@ -115,6 +122,7 @@ const dataset2 = [
         id: 4121,
         text: 'Es war seine Frau, Mrs. Roberta Tent zu besuch, ein Herr, ein Junge - vielleicht sein Sohn - und eine junge Frau. ' +
             'Alles Verdächtige. Von den anderen weiß ich die Namen nicht.',
+        type: "default",
         options: [
             {
                 text: 'Danke für Ihre Zeit, ich befrage jetzt die Putzkraft',
@@ -137,6 +145,7 @@ const dataset2 = [
     {
         id: 5,
         text: 'Wo im Hotelzimmer willst du dich umschauen?',
+        type: "default",
         options:[
             {
                 text: 'Zum Bett',
@@ -155,6 +164,7 @@ const dataset2 = [
     {
         id: 51,
         text: 'Neben dem Bett ist am Boden eine zerschmetterte Nachttischlampe. Viele Scherben liegen rum.',
+        type: "default",
         options:[
             {
                 text: 'Scherben einsammeln',
@@ -178,6 +188,7 @@ const dataset2 = [
     {
         id: 511,
         text: 'Die Scherben gehören nun zu deinen Beweismittel. Wie geht es weiter?',
+        type: "default",
         options: [
             {
                 text: 'Zum Schreibtisch',
@@ -204,6 +215,7 @@ const dataset2 = [
     {
         id: 52,
         text: 'Beim Schreibtisch siehst du zwei Whiskey Gläser, aber keine Flasche. In dem einem Glas ist noch ca. ein Schluck übrig.',
+        type: "default",
         options: [
             {
                 text: 'Schluck trinken',
@@ -232,6 +244,7 @@ const dataset2 = [
     {
         id: 521,
         text: 'Ohje! Das war ein Nuss-Whiskey und du bist extrem stark allergisch. Du stirbst.',
+        type: "default",
         options: [
             {
                 text: 'restart',
@@ -242,6 +255,7 @@ const dataset2 = [
     {
         id: 522,
         text: 'Das Reagenzglas gehört nun zu deinen Beweismitteln. Wie geht es weiter?',
+        type: "default",
         options: [
             {
                 text: 'Zum Bett',
@@ -268,6 +282,7 @@ const dataset2 = [
     {
         id: 53,
         text: 'Beim Waschbecken des Badezimmers liegt eine Nagelpfeile mit Blut.',
+        type: "default",
         options:[
             {
                 text: 'Nagelpfeile einsammeln',
@@ -291,6 +306,7 @@ const dataset2 = [
     {
         id: 531,
         text: 'Die Nagelpfeile gehören nun zu deinen Beweismittel. Wie geht es weiter?',
+        type: "default",
         options: [
             {
                 text: 'Zum Schreibtisch',
@@ -317,6 +333,7 @@ const dataset2 = [
     {
         id: 6,
         text: 'Du stehst über der Leiche. Was schaust du dir genauer an?',
+        type: "default",
         options:[
             {
                 text: 'Den Kopf anschauen',
@@ -335,6 +352,7 @@ const dataset2 = [
     {
         id: 61,
         text: 'Die Augen sind voller Angst. Der Mund ist blau angelaufen.',
+        type: "default",
         options: [
             {
                 text: 'Genug Info. Im Zimmer umschauen.',
@@ -361,6 +379,7 @@ const dataset2 = [
     {
         id: 62,
         text: 'Der Mann hat einen Ausweis. Sein Name ist Mr. John Tent und er ist Pilot. Er ist 45 Jahre alt.',
+        type: "default",
         options: [
             {
                 text: 'Genug Info. Im Zimmer umschauen.',
@@ -387,6 +406,7 @@ const dataset2 = [
     {
         id: 63,
         text: 'Der Mann hat eine Stechwunde. Wohl möglich dadurch gestorben.',
+        type: "default",
         options: [
             {
                 text: 'Genug Info. Im Zimmer umschauen.',
@@ -414,6 +434,7 @@ const dataset2 = [
         id: 100,
         text: 'Du möchtest den Mord auflösen. Hierbei musst du Tatwaffe und Mörder:in nennen. Falls du Beweismittel hast' +
             'darfst du eines davon der Forensik geben. Für mehr haben sie keine Zeit. (Keine Beweismittel = Keine Forensik)',
+        type: "default",
         options: [
             {
                 text: 'Beweismittel der Forensik geben',
@@ -439,6 +460,7 @@ const dataset2 = [
     {
         id: 110,
         text: 'An der Lampenscherbe wurden Haare gefunden. Sie gehören Mrs. Roberta Tent',
+        type: "default",
         options: [
             {
                 text: 'Weiter zur Tatwaffe',
@@ -449,6 +471,7 @@ const dataset2 = [
     {
         id: 111,
         text: 'Der Whiskey ist unauffällig. Leider keine Spuren auf Gift oder ähnliches. Der Whiskey stammt aus 1867 mit Nuss-Geschmack',
+        type: "default",
         options: [
             {
                 text: 'Weiter zur Tatwaffe',
@@ -459,6 +482,8 @@ const dataset2 = [
     {
         id: 112,
         text: 'Auf der Nagelpfeile waren Blutspuren. Person konnte nicht identifiziert werden, aber das Alter. Ca. 25 Jahre alt',
+        type: "default",
+
         options: [
             {
                 text: 'Weiter zur Tatwaffe',
@@ -469,6 +494,7 @@ const dataset2 = [
     {
         id: 101,
         text: 'Was war die Tatwaffe?',
+        type: "default",
         options: [
             {
                 text: 'Ein Messer',
@@ -505,6 +531,7 @@ const dataset2 = [
             'Wenn du das folgende Rätsel richtig errätst darfst du noch die Person erraten.' +
             '"Wenn ein Schläger und ein Ball gemeinsam 1,10€ kosten und der Schläger genau 1,00€' +
             'mehr als der Ball kostet, was kostet der Ball?',
+        type: "default",
         options: [
             {
                 text: '10 cent',
@@ -523,6 +550,7 @@ const dataset2 = [
     {
         id: 104,
         text: 'Leider falsch. Du hast im Case H versagt.',
+        type: "default",
         options: [
             {
                 text: 'restart',
@@ -533,6 +561,7 @@ const dataset2 = [
     {
         id: 105,
         text: '5 cent is korrekt. Die eigentliche Tatwaffe war das Messer. Du darfst die Person erraten.',
+        type: "default",
         options: [
             {
                 text: 'Person erraten',
@@ -543,6 +572,7 @@ const dataset2 = [
     {
         id: 103,
         text: 'Wer hat mit dem Messer den Piloten John Tent umgebracht?',
+        type: "default",
         options: [
             {
                 text: 'Seine Ehefrau',
@@ -613,4 +643,4 @@ const dataset2 = [
         ]
     }
 ]
-export const textNodes = dataset2;
+export const DetectiveStory = dataset;

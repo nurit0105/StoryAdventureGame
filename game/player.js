@@ -25,6 +25,15 @@ export class Player {
         }
     }
 
+    resetValues () {
+        this.inventory = new Inventory();
+        this.hp = 100;
+        this.attack = 10;
+        this.defense = 10;
+        this.money = 100;
+        this.value = 0
+    }
+
     printPlayer() {
         console.log(this);
     }

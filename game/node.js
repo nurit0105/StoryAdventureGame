@@ -1,9 +1,9 @@
-import {textNodes} from "./data.js";
-//import {textNodes} from "../dataSecondGame.js";
+//import {textNodes} from "../dataDetectiveStory.js";
 
 
 class Node {
 
+s
     constructor(nodeID, textNodes) {
         this.edge = [];
         this.ID = nodeID;
@@ -13,6 +13,9 @@ class Node {
         this.nodename = textNodes.find(textNode => textNode.id === nodeID).nodename;
         this.items = textNodes.find(textNode => textNode.id === nodeID).items;
         this.stats = textNodes.find(textNode => textNode.id === nodeID).stats;
+        this.music = textNodes.find(textNode => textNode.id === nodeID).music;
+        this.image = textNodes.find(textNode => textNode.id === nodeID).image;
+
     }
 
     addEdge(nextNodeID) {
@@ -26,7 +29,7 @@ class Node {
 
 export class timeNode extends Node {
 
-    constructor(nodeID, time) {
+    constructor(nodeID,textNodes, time) {
         super(nodeID, textNodes);
         this.time = time;
     }
@@ -34,7 +37,7 @@ export class timeNode extends Node {
 
 export class probabilityNode extends Node {
 
-    constructor(nodeID, probability) {
+    constructor(nodeID, textNodes, probability) {
         super(nodeID, textNodes);
         this.probability = probability;
     }
@@ -42,7 +45,7 @@ export class probabilityNode extends Node {
 
 export class npcNode extends Node {
 
-    constructor(nodeID) {
+    constructor(nodeID, textNodes) {
         super(nodeID, textNodes);
         this.npc = textNodes.find(textNode => textNode.id === nodeID).npc;
         this.npcmoney = 20;
@@ -51,7 +54,7 @@ export class npcNode extends Node {
 
 export class defaultNode extends Node {
 
-    constructor(nodeID) {
+    constructor(nodeID, textNodes) {
         super(nodeID, textNodes);
     }
 }
