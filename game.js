@@ -5,11 +5,12 @@ import {DetectiveStory} from "./game/dataDetectiveStory.js";
 
 
 //TO DO: hauptsächlich in den daten
-//ID 8 im FantasyDataSet führt im Kreis - in der detektive story gig es glaube ich auch einige die so sind
-//node namen verbessern
+//ID 4 im detective game fehlt - vielleicht noch andere id probleme
+//node namen verbessern/hinzufügen
 //die drei nodetypen an anderen stellen einfügen und story entsprechend anpassen - müsste man ausprobieren
 //node 17 redundante items entfernen
-//wir brauchen nur fantasyGame.html fürs spiel
+//wir brauchen nur fantasyGame.html fürs spiel andere detective html entfernen
+//game.js aufräumen
 
 
 /*
@@ -27,16 +28,21 @@ const edges = new vis.DataSet(options);
 
 
 function visualization(nodeID) {
+
+    let var1 = nodes.get(nodeID);
+    console.log(var1)
+     if(var1 === null) {
     nodes.add([{
         id: nodeID,
         label: String(g.AdjList.get(nodeID).nodename)
-    }, ]);
+    },]);
     for (const edge of g.AdjList.get(nodeID).getEdge()) {
         edges.add([{
             from: nodeID,
             to: edge
-        }, ]);
+        },]);
     }
+}
 }
 
 const container = document.getElementById("mynetwork");

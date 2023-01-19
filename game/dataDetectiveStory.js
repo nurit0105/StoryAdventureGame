@@ -603,6 +603,7 @@ const dataset = [
     {
         id: 120,
         text: 'Die Person die du beschuldigt hast wurde im Richtersaal unschuldig gesprochen. Dein Ruf als Detektiv ist stark gesunken. Keine Weiteren Fälle für dich.',
+        type: "default",
         options: [
             {
                 text: 'restart',
@@ -613,6 +614,7 @@ const dataset = [
     {
         id: 121,
         text: 'Korrekt. Der unbekannte Mann hat den Piloten John Tent mit einem Messer umgebracht',
+        type: "default",
         options: [
             {
                 text: 'Motiv auflösung',
@@ -635,6 +637,7 @@ const dataset = [
             'Der Mann führte anfangs ein normales Gespräch bei Whiskey mit John Tent und hatte ein Messer in seiner Hosentasche versteckt.' +
             'Und dann nahm er das Messer und stach auf John Tent ein. Der Grund: Eifersucht. Steffanie Muphli ist doch seine Freundin.' +
             'Erschrocken darüber was er gerade getan hat steckte er das Messer wieder ein und nahm die Whiskey Flasche zum trinken mit. Danke Detektiv, du hast den Fall gelöst',
+        type: "default",
         options: [
             {
                 text: 'restart',
