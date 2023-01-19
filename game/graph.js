@@ -34,7 +34,7 @@ export class Graph {
         console.log(this);
     }
 
-    resetValues () {
+    resetValues() {
         this.AdjList = new Map(); // main data structure for the graph
         this.activeNode = 0; // the first active node has the nodeID 0
     }

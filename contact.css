@@ -64,11 +64,12 @@ a {
     color: white;
 }
 
-.container-personal{
+.container-personal {
     margin: 50px;
-    background-color: #bad2f6 ;
+    background-color: #bad2f6;
     border-radius: 5px;
 }
+
 /* Columns Anfang */
 
 .column {

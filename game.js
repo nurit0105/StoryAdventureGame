@@ -4,13 +4,15 @@ import {FantasyStory} from "./game/dataFantasyStory.js";
 import {DetectiveStory} from "./game/dataDetectiveStory.js";
 
 
-//TO DO: hauptsächlich in den daten
-//ID 4 im detective game fehlt - vielleicht noch andere id probleme
-//node namen verbessern/hinzufügen
-//die drei nodetypen an anderen stellen einfügen und story entsprechend anpassen - müsste man ausprobieren
-//node 17 redundante items entfernen
-//wir brauchen nur fantasyGame.html fürs spiel andere detective html entfernen
-//game.js aufräumen
+/*erledigte To-Do's:
+- HTML files (Titel, Container, Navbar, Homepage)
+- CSS (Padding, Flexbox, Footer)
+- Fantasy Game Dataset (ID 8 führt im Kreis gelöst, Node Namen verbessert)
+- Detective Game Dataset (Node Namen, Schlüssigkeit größtenteils überprüft, Kommentar am Anfang mit "Beta-Testing" (siehe Dataset))
+Noch offene To-DO's:
+- die drei nodetypen an anderen stellen einfügen und story entsprechend anpassen (müsste man ausprobieren)
+- node 17 redundante items entfernen
+- game.js aufräumen */
 
 
 /*
@@ -25,24 +27,22 @@ const nodes = new vis.DataSet(options);
 const edges = new vis.DataSet(options);
 
 
-
-
 function visualization(nodeID) {
 
     let var1 = nodes.get(nodeID);
     console.log(var1)
-     if(var1 === null) {
-    nodes.add([{
-        id: nodeID,
-        label: String(g.AdjList.get(nodeID).nodename)
-    },]);
-    for (const edge of g.AdjList.get(nodeID).getEdge()) {
-        edges.add([{
-            from: nodeID,
-            to: edge
+    if (var1 === null) {
+        nodes.add([{
+            id: nodeID,
+            label: String(g.AdjList.get(nodeID).nodename)
         },]);
+        for (const edge of g.AdjList.get(nodeID).getEdge()) {
+            edges.add([{
+                from: nodeID,
+                to: edge
+            },]);
+        }
     }
-}
 }
 
 const container = document.getElementById("mynetwork");
@@ -64,7 +64,6 @@ const image = document.createElement('image')
 
 
 var dataset = document.getElementById("dataset");
-
 
 
 let textNodes = FantasyStory
@@ -100,10 +99,9 @@ function onChange() {
     var text = dataset.options[dataset.selectedIndex].text;
 
 
-
-
     startGame()
 }
+
 dataset.onchange = onChange;
 let state = {}
 
@@ -123,16 +121,12 @@ preGame()
 p.printPlayer();
 
 
-
-
 function startGame() {
     state = {}
 
 
     displayGame(1)
 }
-
-
 
 
 function displayGame(textNodeIndex) {
@@ -142,7 +136,6 @@ function displayGame(textNodeIndex) {
     g.addNode(textNodeIndex, textNodes.find(textNode => textNode.id === textNodeIndex).type, textNodes) //adding nodes sometimes leads to inconsistencies and error!
     g.printGraph()
     visualization(g.AdjList.get(textNodeIndex).ID)
-
 
 
     while (image.firstChild) {
@@ -177,7 +170,6 @@ function displayGame(textNodeIndex) {
     }
 
 
-
     activenode.innerText = g.activeNode
     textElement.innerText = g.AdjList.get(textNodeIndex).text
     while (optionButtonsElement.firstChild) {
@@ -208,14 +200,16 @@ function playAudio(node) {
             audio = new Audio(node.music)
             audio.play()
         }
-    } catch (err) {}
+    } catch (err) {
+    }
 }
 
 
 function stopAudio() {
     try {
         audio.pause()
-    } catch (err) {}
+    } catch (err) {
+    }
 }
 
 
@@ -228,8 +222,6 @@ function displayImage(node) {
         document.getElementById("image").appendChild(button); //add buttons to html document
     }
 }
-
-
 
 
 function showOption(option) {
@@ -268,7 +260,6 @@ function selectOption(option) {
         stopAudio()
         return startGame()
     }
-
 
 
     displayGame(nextTextNodeId)
@@ -354,7 +345,7 @@ function probabilityEvent() {
     if (rand >= 5) {
         p.addItemInventory("Axe")
     } else {
-        p.hp = p.hp-20;
+        p.hp = p.hp - 20;
     }
 }
 

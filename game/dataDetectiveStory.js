@@ -1,9 +1,12 @@
 const dataset = [
     {
         id: 1,
-        text: 'Willkommen beim Detective Game. Deine Aktionen haben Konsequenzen. Du sitzt in deinem Detektiv-Büro und CASE H kommt rein.' +
+        text: 'Willkommen beim Detective Game. Dieses Spiel ist unser Nebenspiel und wird noch verbessert.' +
+            'Alle Hauptfunktionen (Buttons) sollten Funktionieren. Viel Spaß beim Beta-Testen. Deine Aktionen haben Konsequenzen. ' +
+            'Du sitzt in deinem Detektiv-Büro und CASE H kommt rein.' +
             'Nimmst du dich dem Mordfall an? (TW: Mord, Blut, Gewalt)',
         type: "default",
+        nodename: "Detektiv Büro",
         options: [
             {
                 text: 'Ja',
@@ -18,6 +21,7 @@ const dataset = [
         id: 2,
         text: 'Ist eine Detektiv-Story nichts für dich? Probier es vielleicht mit unserem Fantasy Game.',
         type: "default",
+        nodename: "another Game?",
         options: [
             {
                 text: 'restart',
@@ -26,32 +30,34 @@ const dataset = [
         ]
     },
     {
-        id:3,
+        id: 3,
         text: 'Der Case H bringt dich in ein Hotelzimmer. Im Hotelzimmer liegt ein Mann ermordet. Noch ist nicht festgestellt was die Mordwaffe ist' +
             'oder wer für diese Tat verantwortlich ist. Wo suchst du nach Hinweisen?',
         type: "default",
-        options:[
+        nodename: "Hotelzimmer",
+        options: [
             {
-                text:'Zeugen befragen',
+                text: 'Zeugen befragen',
                 nextText: 4
-            },{
-                text:'Im Hotelzimmer umschauen',
+            }, {
+                text: 'Im Hotelzimmer umschauen',
                 nextText: 5
-            },{
+            }, {
                 text: 'Leiche genauer anschauen',
                 nextText: 6
             }
         ]
     },
     {
-        id: 41,
+        id: 4,
         text: 'Wen möchtest du zu den Geschehnissen befragen?',
         type: "default",
+        nodename: "Interviews",
         options: [
             {
                 text: 'Putzkraft',
                 nextText: 411
-            },{
+            }, {
                 text: 'Hotel-Rezeption',
                 nextText: 412
             }
@@ -62,6 +68,7 @@ const dataset = [
         text: 'Soweit ich weiß war er übers Wochenende da. Jeden Morgen bin ich gekommen um sein Zimmer, so wie alle Zimmer, zu putzen.' +
             'Am ersten Morgen vor seiner Anreise, gestern und naja heute bevor ich aufräumen konnte hab ich ihn tot gefunden.',
         type: "default",
+        nodename: "Putzkraft",
         options: [
             {
                 text: 'Ist Ihnen etwas bestimmtes aufgefallen?',
@@ -73,7 +80,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -81,6 +88,7 @@ const dataset = [
         id: 4111,
         text: 'Es war jedes Mal extrem unaufgeräumt. Ich glaub er hatte sehr viel Besuch. Männlichen. Weiblichen. Viel Besuch. Das ist alles was ich weiß',
         type: "default",
+        nodename: "Putzkraft",
         options: [
             {
                 text: 'Danke für Ihre Zeit, ich befrage jetzt die Hotel-Rezeption',
@@ -96,7 +104,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -105,16 +113,17 @@ const dataset = [
         text: 'Schrecklich für den Ruf unseres Hotels. Schrecklich, Schrecklich und einfach nur Furchtbar. Wir werden weniger Kunden in den nächsten' +
             'Monaten haben. Schrecklich.',
         type: "default",
+        nodename: "Rezeption",
         options: [
             {
                 text: 'Ist Ihnen etwas bestimmtes aufgefallen?',
                 nextText: 4121
-            },{
+            }, {
                 text: 'Danke für Ihre Zeit. Ich befrage jetzt die Putzkraft.',
                 nextText: 411
-            },{
+            }, {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -123,13 +132,14 @@ const dataset = [
         text: 'Es war seine Frau, Mrs. Roberta Tent zu besuch, ein Herr, ein Junge - vielleicht sein Sohn - und eine junge Frau. ' +
             'Alles Verdächtige. Von den anderen weiß ich die Namen nicht.',
         type: "default",
+        nodename: "Rezeption",
         options: [
             {
                 text: 'Danke für Ihre Zeit, ich befrage jetzt die Putzkraft',
                 nextText: 411
             },
             {
-                 text: 'Danke für Ihre Zeit, ich gehe und schaue mir das Hotel Zimmer an',
+                text: 'Danke für Ihre Zeit, ich gehe und schaue mir das Hotel Zimmer an',
                 nextText: 5
             },
             {
@@ -138,7 +148,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -146,7 +156,8 @@ const dataset = [
         id: 5,
         text: 'Wo im Hotelzimmer willst du dich umschauen?',
         type: "default",
-        options:[
+        nodename: "Hotelzimmer",
+        options: [
             {
                 text: 'Zum Bett',
                 nextText: 51
@@ -165,7 +176,8 @@ const dataset = [
         id: 51,
         text: 'Neben dem Bett ist am Boden eine zerschmetterte Nachttischlampe. Viele Scherben liegen rum.',
         type: "default",
-        options:[
+        nodename: "Bett",
+        options: [
             {
                 text: 'Scherben einsammeln',
                 setState: {lampFragment: true},
@@ -181,7 +193,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                id: 100
+                id: 99
             }
         ]
     },
@@ -189,6 +201,7 @@ const dataset = [
         id: 511,
         text: 'Die Scherben gehören nun zu deinen Beweismittel. Wie geht es weiter?',
         type: "default",
+        nodename: "Scherben",
         options: [
             {
                 text: 'Zum Schreibtisch',
@@ -208,7 +221,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -216,6 +229,7 @@ const dataset = [
         id: 52,
         text: 'Beim Schreibtisch siehst du zwei Whiskey Gläser, aber keine Flasche. In dem einem Glas ist noch ca. ein Schluck übrig.',
         type: "default",
+        nodename: "Schreibtisch",
         options: [
             {
                 text: 'Schluck trinken',
@@ -233,11 +247,11 @@ const dataset = [
             },
             {
                 text: 'Ins Badezimmer',
-                nextText: 52
+                nextText: 53
             },
             {
                 text: "Mord auflösen",
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -245,6 +259,7 @@ const dataset = [
         id: 521,
         text: 'Ohje! Das war ein Nuss-Whiskey und du bist extrem stark allergisch. Du stirbst.',
         type: "default",
+        nodename: "Sterben",
         options: [
             {
                 text: 'restart',
@@ -256,6 +271,7 @@ const dataset = [
         id: 522,
         text: 'Das Reagenzglas gehört nun zu deinen Beweismitteln. Wie geht es weiter?',
         type: "default",
+        nodename: "Reagenzglas",
         options: [
             {
                 text: 'Zum Bett',
@@ -275,15 +291,16 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
     {
         id: 53,
         text: 'Beim Waschbecken des Badezimmers liegt eine Nagelpfeile mit Blut.',
+        nodename: "Nagelpfeile",
         type: "default",
-        options:[
+        options: [
             {
                 text: 'Nagelpfeile einsammeln',
                 setState: {nailFile: true},
@@ -299,7 +316,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                id: 100
+                id: 99
             }
         ]
     },
@@ -307,6 +324,7 @@ const dataset = [
         id: 531,
         text: 'Die Nagelpfeile gehören nun zu deinen Beweismittel. Wie geht es weiter?',
         type: "default",
+        nodename: "Beweismittel",
         options: [
             {
                 text: 'Zum Schreibtisch',
@@ -326,7 +344,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -334,7 +352,8 @@ const dataset = [
         id: 6,
         text: 'Du stehst über der Leiche. Was schaust du dir genauer an?',
         type: "default",
-        options:[
+        nodename: "Leiche",
+        options: [
             {
                 text: 'Den Kopf anschauen',
                 nextText: 61
@@ -353,6 +372,7 @@ const dataset = [
         id: 61,
         text: 'Die Augen sind voller Angst. Der Mund ist blau angelaufen.',
         type: "default",
+        nodename: "Gesicht",
         options: [
             {
                 text: 'Genug Info. Im Zimmer umschauen.',
@@ -372,7 +392,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -380,6 +400,7 @@ const dataset = [
         id: 62,
         text: 'Der Mann hat einen Ausweis. Sein Name ist Mr. John Tent und er ist Pilot. Er ist 45 Jahre alt.',
         type: "default",
+        nodename: "Ausweis",
         options: [
             {
                 text: 'Genug Info. Im Zimmer umschauen.',
@@ -399,7 +420,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
@@ -407,6 +428,7 @@ const dataset = [
         id: 63,
         text: 'Der Mann hat eine Stechwunde. Wohl möglich dadurch gestorben.',
         type: "default",
+        nodename: "Wunde",
         options: [
             {
                 text: 'Genug Info. Im Zimmer umschauen.',
@@ -426,15 +448,16 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                nextText: 100
+                nextText: 99
             }
         ]
     },
     {
-        id: 100,
+        id: 99,
         text: 'Du möchtest den Mord auflösen. Hierbei musst du Tatwaffe und Mörder:in nennen. Falls du Beweismittel hast' +
             'darfst du eines davon der Forensik geben. Für mehr haben sie keine Zeit. (Keine Beweismittel = Keine Forensik)',
         type: "default",
+        nodename: "Option Forensik",
         options: [
             {
                 text: 'Beweismittel der Forensik geben',
@@ -453,7 +476,7 @@ const dataset = [
             },
             {
                 text: 'Weiter zur Tatwaffe',
-                nextText: 101
+                nextText: 100
             }
         ]
     },
@@ -461,10 +484,11 @@ const dataset = [
         id: 110,
         text: 'An der Lampenscherbe wurden Haare gefunden. Sie gehören Mrs. Roberta Tent',
         type: "default",
+        nodename: "Haare",
         options: [
             {
                 text: 'Weiter zur Tatwaffe',
-                nextText: 101
+                nextText: 100
             }
         ]
     },
@@ -472,29 +496,32 @@ const dataset = [
         id: 111,
         text: 'Der Whiskey ist unauffällig. Leider keine Spuren auf Gift oder ähnliches. Der Whiskey stammt aus 1867 mit Nuss-Geschmack',
         type: "default",
+        nodename: "Whiskey",
         options: [
             {
                 text: 'Weiter zur Tatwaffe',
-                nextText: 101
+                nextText: 100
             }
         ]
     },
     {
         id: 112,
         text: 'Auf der Nagelpfeile waren Blutspuren. Person konnte nicht identifiziert werden, aber das Alter. Ca. 25 Jahre alt',
+        nodename: "Blutspur",
         type: "default",
 
         options: [
             {
                 text: 'Weiter zur Tatwaffe',
-                nextText: 101
+                nextText: 100
             }
         ]
     },
     {
-        id: 101,
+        id: 100,
         text: 'Was war die Tatwaffe?',
         type: "default",
+        nodename: "Tatwaffe",
         options: [
             {
                 text: 'Ein Messer',
@@ -532,6 +559,7 @@ const dataset = [
             '"Wenn ein Schläger und ein Ball gemeinsam 1,10€ kosten und der Schläger genau 1,00€' +
             'mehr als der Ball kostet, was kostet der Ball?',
         type: "default",
+        nodename: "falsche Waffe",
         options: [
             {
                 text: '10 cent',
@@ -551,6 +579,7 @@ const dataset = [
         id: 104,
         text: 'Leider falsch. Du hast im Case H versagt.',
         type: "default",
+        nodename: "verloren",
         options: [
             {
                 text: 'restart',
@@ -562,6 +591,7 @@ const dataset = [
         id: 105,
         text: '5 cent is korrekt. Die eigentliche Tatwaffe war das Messer. Du darfst die Person erraten.',
         type: "default",
+        nodename: "richitg",
         options: [
             {
                 text: 'Person erraten',
@@ -573,6 +603,7 @@ const dataset = [
         id: 103,
         text: 'Wer hat mit dem Messer den Piloten John Tent umgebracht?',
         type: "default",
+        nodename: "Mörder?",
         options: [
             {
                 text: 'Seine Ehefrau',
@@ -604,6 +635,7 @@ const dataset = [
         id: 120,
         text: 'Die Person die du beschuldigt hast wurde im Richtersaal unschuldig gesprochen. Dein Ruf als Detektiv ist stark gesunken. Keine Weiteren Fälle für dich.',
         type: "default",
+        nodename: "unschuldig",
         options: [
             {
                 text: 'restart',
@@ -615,6 +647,7 @@ const dataset = [
         id: 121,
         text: 'Korrekt. Der unbekannte Mann hat den Piloten John Tent mit einem Messer umgebracht',
         type: "default",
+        nodename: "schuldig",
         options: [
             {
                 text: 'Motiv auflösung',
@@ -638,6 +671,7 @@ const dataset = [
             'Und dann nahm er das Messer und stach auf John Tent ein. Der Grund: Eifersucht. Steffanie Muphli ist doch seine Freundin.' +
             'Erschrocken darüber was er gerade getan hat steckte er das Messer wieder ein und nahm die Whiskey Flasche zum trinken mit. Danke Detektiv, du hast den Fall gelöst',
         type: "default",
+        nodename: "Auflösung",
         options: [
             {
                 text: 'restart',

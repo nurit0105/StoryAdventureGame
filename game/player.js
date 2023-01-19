@@ -16,16 +16,16 @@ export class Player {
         this.inventory.addItem(item)
     }
 
-    playerFight(npcNode){
+    playerFight(npcNode) {
         this.hp = 100 - npcNode.stats[0].attack;
         console.log(npcNode);
 
-        if (this.hp<0) {
+        if (this.hp < 0) {
             console.log("you are dead")
         }
     }
 
-    resetValues () {
+    resetValues() {
         this.inventory = new Inventory();
         this.hp = 100;
         this.attack = 10;

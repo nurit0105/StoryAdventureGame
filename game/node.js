@@ -3,7 +3,8 @@
 
 class Node {
 
-s
+    s
+
     constructor(nodeID, textNodes) {
         this.edge = [];
         this.ID = nodeID;
@@ -29,7 +30,7 @@ s
 
 export class timeNode extends Node {
 
-    constructor(nodeID,textNodes, time) {
+    constructor(nodeID, textNodes, time) {
         super(nodeID, textNodes);
         this.time = time;
     }

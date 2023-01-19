@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="Game.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script type="module" src="game.js"></script>
+    <title>Story Adventure Game</title>
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+<header>
+    <h1> Story Adventure Game </h1>
+</header>
+<div class="topnav">
+    <a href="index.html"> Home </a>
+    <a class="active" href="Game.html"> Game</a>
+    <a href="contact.html">Contact</a>
+</div>
+<div id="inventory" class="selection1"></div>
+
+<label for="dataset"></label><select id="dataset" class="selection2">
+    <option disabled selected hidden>Wähle Geschichte</option>
+    <option>Fantasy Story</option>
+    <option>Detective Story</option>
+</select>
+
+<div class="flex-container">
+    <div class="container">
+        <div id="activenode"> Text</div>
+        <div id="text" class="text"> Text</div>
+        <div id="item" class="item"></div>
+        <div id="image" class="item"></div>
+
+        <img id="journey" src="" alt="">
+        <div id="option-buttons" class="btn-grid">
+            <button class="btn"> Option 1</button>
+            <button class="btn"> Option 2</button>
+            <button class="btn"> Option 3</button>
+            <button class="btn"> Option 4</button>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <p> Game Map </p>
+        <div id="mynetwork"></div>
+    </div>
+</div>
+
+
+<div class="footer"> Copyright @2022 | Developed by FH Campus Wien Students</div>
+</body>
+</html>

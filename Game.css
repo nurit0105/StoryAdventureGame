@@ -2,11 +2,12 @@
     box-sizing: border-box;
     font-family: Arial;
 }
+
 .audio {
-  display: flex;
-  justify-content: space-around;
-  background-color:#122d2b;
-  font-color: white;
+    display: flex;
+    justify-content: space-around;
+    background-color: #122d2b;
+    font-color: white;
 }
 
 body {
@@ -62,6 +63,14 @@ header {
     height: auto;
 }
 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     padding: 20px;
     width: 600px;
@@ -97,7 +106,8 @@ header {
 }
 
 .footer {
-    position: fixed;
+    /* position: fixed; */
+    margin-top: 5%;
     padding: 10px 10px 10px;
     font-size: small;
     text-align: center;
@@ -110,29 +120,17 @@ header {
 }
 
 .item {
-    padding-top: 25px;
-    padding-right: 3px;
-    padding-bottom: 1px;
-    padding-left: 8px;
+    padding: 25px 3px 1px 8px;
 }
 
-.text{
-    padding-top: 5px;
-    padding-right: 3px;
-    padding-bottom: 5px;
-    padding-left: 8px;
+.text {
+    padding: 5px 3px 5px 8px;
 }
 
-.selection1{
-    padding-top: 5px;
-    padding-right: 3px;
-    padding-bottom: 5px;
-    padding-left: 8px;
+.selection1 {
+    padding: 5px 3px 5px 8px;
 }
 
-.selection2{
-    padding-top: 5px;
-    padding-right: 3px;
-    padding-bottom: 5px;
-    padding-left: 8px;
+.selection2 {
+    padding: 5px 3px 5px 8px;
 }
