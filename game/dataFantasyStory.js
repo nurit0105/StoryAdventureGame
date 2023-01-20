@@ -21,7 +21,7 @@ const dataset = [
         id: 2,
         text: 'Du läufst durch den Wald und findest unter einer Fichte mehrere Pilze. Sammelst du sie ein?',
         image: "https://www.tierwelt.ch/fileadmin/user_upload/tierwelt/artikel-bilder/woodwing/18-2022/88324be8351701e4a2e08bb2e9801331a7edc59865c4ad6b6994b97d143ea5cc.jpg",
-        type: "default", //should be probability
+        type: "probabilityNode", //should be probability
         music: "music/wald.mp3",
         nodename: "Pilze",
         options: [
@@ -57,7 +57,7 @@ const dataset = [
     {
         id: 29,
         text: 'Auf deinem Pfad stolperst du. Du schaust zu Boden. Ein verrosteter Speer liegt dir zu Füßen. Hebst du ihn auf?',
-        type: "probabilityNode", //should be probability
+        type: "default", //should be probability
         nodename: "Speer",
         options: [
             {
@@ -94,7 +94,7 @@ const dataset = [
     {
         id: 31,
         text: 'Dein Weg endet bei einem Fluss. Was tust du?',
-        type: "default", // should be probability
+        type: "probabilityNode", // should be probability
         nodename: "Fluss",
         options: [
             {
@@ -114,7 +114,7 @@ const dataset = [
     {
         id: 33, //probability node player-dependent
         text: 'Beim Versuch den Fluss zu überqueren hält dich ein See Monster auf. Entweder du gibst dem Monster was zum essen oder es isst dich!',
-        type: "default", // should be probability
+        type: "probabilityNode", // should be probability
         nodename: "Monster",
         options: [
             {
@@ -319,7 +319,7 @@ const dataset = [
         id: 4,
         text: 'Du befindest dich am Marktplatz. Der Marktplatz ist sehr belebt. Du hast verschiedene Sachen, die du dir ansehen kannst. Wohin gehst du?',
         image: "https://cdna.artstation.com/p/assets/images/images/020/107/772/large/samantha-kung-medieval-marketplace.jpg?1566397964",
-        type: "default",
+        type: "probabilityNode",
         nodename: "Marktplatz",
         music: "music/marktplatz.mp3",
         options: [
@@ -437,16 +437,16 @@ const dataset = [
     },
     {
         id: 42,
-        text: 'Wohin willst du mit dem Magic Carpet fliegen?',
-        type: "default",
+        text: 'Der Magic Carpet erfordert hohes körperliches Geschick. Klicke den Button möglichst schnell um deine Fähigkeiten zu zeigen. Wohin willst du mit dem Magic Carpet fliegen?',
+        type: "timeNode",
         nodename: "Teppich",
         options: [
             {
-                text: 'Zum Schloss',
+                text: 'Versuche zum Schloss zu kommen',
                 nextText: 12
             },
             {
-                text: 'Zum nächsten Dorf',
+                text: 'Versuche das nächsten Dorf zu erreichen',
                 nextText: 13
             }
         ]
@@ -503,7 +503,7 @@ const dataset = [
     },
     {
         id: 28,
-        text: 'Mit deiner neuen Waffe meldest du dich zu einem Kampf an. Du stehst deinem Gegner jetzt gegenüber.',
+        text: 'Mit deiner neuen Waffe meldest du dich zu einem Kampf an. Du stehst einem grimmigen Axtkämpfer jetzt gegenüber.',
         nodename: "Kampf",
 
         type: "npcNode",
@@ -514,13 +514,10 @@ const dataset = [
         ],
         options: [
             {
-                text: 'kämpfen!',
-                nextText: 14
-            },
-            {
-                text: 'kämpfen!',
+                text: 'Wie geht der Kampf aus?',
                 nextText: 15
             },
+
             {
                 text: 'kämpfen!',
                 requiredState: (currentState) => currentState.spear, // requires to have certain weapon for this option
@@ -543,7 +540,7 @@ const dataset = [
     },
     {
         id: 14,
-        text: 'Du verlierst beim Kampf und stirbst!',
+        text: 'Du erliegts deinen Verletzungen und stirbst!',
         nodename: "Kampf",
 
         type: "default",
@@ -615,12 +612,8 @@ const dataset = [
                 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Trp-Sword-14226124129-v06.png/800px-Trp-Sword-14226124129-v06.png"
             },
             {
-                item: "Schwert",
-                image: "https://cdn.vegaoo.de/images/rep_art/gra/310/2/310207/mittelalterliches-krieger-schild-kostumzubehor-mittelalter-braun-40cm.jpg"
-            },
-            {
-                item: "Schwert",
-                image: "https://cdn.vegaoo.de/images/rep_art/gra/310/2/310207/mittelalterliches-krieger-schild-kostumzubehor-mittelalter-braun-40cm.jpg"
+                item: "Helm",
+                image: "http://atlas-content-cdn.pixelsquid.com/stock-images/helmet-medieval-aqOQEVC-600.jpg",
             },
         ],
         npc: "Königsfamilie",
@@ -691,7 +684,7 @@ const dataset = [
         id: 20,
         text: 'Ohje! Das war eigentlich für den König gedacht aber es wurde vertauscht.' +
             ' Beim Versuch den König zu vergiften wurdest du vergiftet.' +
-            'Du stribst',
+            'Du stirbst',
         type: "default",
         nodename: "tödliche Verwechslung",
 

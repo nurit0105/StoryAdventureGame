@@ -17,7 +17,7 @@ export class Player {
     }
 
     playerFight(npcNode) {
-        this.hp = 100 - npcNode.stats[0].attack;
+        this.hp = this.hp - npcNode.stats[0].attack;
         console.log(npcNode);
 
         if (this.hp < 0) {

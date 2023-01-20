@@ -316,7 +316,7 @@ const dataset = [
             },
             {
                 text: 'Mord auflösen',
-                id: 99
+                nextText: 99
             }
         ]
     },

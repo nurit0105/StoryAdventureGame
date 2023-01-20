@@ -4,17 +4,6 @@ import {FantasyStory} from "./game/dataFantasyStory.js";
 import {DetectiveStory} from "./game/dataDetectiveStory.js";
 
 
-/*erledigte To-Do's:
-- HTML files (Titel, Container, Navbar, Homepage)
-- CSS (Padding, Flexbox, Footer)
-- Fantasy Game Dataset (ID 8 führt im Kreis gelöst, Node Namen verbessert)
-- Detective Game Dataset (Node Namen, Schlüssigkeit größtenteils überprüft, Kommentar am Anfang mit "Beta-Testing" (siehe Dataset))
-Noch offene To-DO's:
-- die drei nodetypen an anderen stellen einfügen und story entsprechend anpassen (müsste man ausprobieren)
-- node 17 redundante items entfernen
-- game.js aufräumen */
-
-
 /*
 vis.js is used to visualize the graph, visualization() is used to update the visualization
  */
@@ -30,7 +19,7 @@ const edges = new vis.DataSet(options);
 function visualization(nodeID) {
 
     let var1 = nodes.get(nodeID);
-    console.log(var1)
+
     if (var1 === null) {
         nodes.add([{
             id: nodeID,
@@ -81,7 +70,6 @@ function onChange() {
         p.resetValues("ich", "blue")
         g.resetValues()
         stopAudio()
-        console.log(value, text);
 
 
     } else {
@@ -118,7 +106,6 @@ function preGame() {
 
 preGame()
 
-p.printPlayer();
 
 
 function startGame() {
@@ -132,7 +119,7 @@ function startGame() {
 function displayGame(textNodeIndex) {
 
 
-    console.log("index", textNodeIndex)
+
     g.addNode(textNodeIndex, textNodes.find(textNode => textNode.id === textNodeIndex).type, textNodes) //adding nodes sometimes leads to inconsistencies and error!
     g.printGraph()
     visualization(g.AdjList.get(textNodeIndex).ID)
@@ -149,7 +136,7 @@ function displayGame(textNodeIndex) {
     }
 
 
-    //p.printPlayer()
+    p.printPlayer()
 
     switch (g.AdjList.get(textNodeIndex).type) {
         case "timeNode":
@@ -162,7 +149,6 @@ function displayGame(textNodeIndex) {
             break;
         case "npcNode":
             npcMeeting(g.AdjList.get(textNodeIndex), p);
-
             // npcNode function
             break;
         default:
@@ -214,7 +200,6 @@ function stopAudio() {
 
 
 function displayImage(node) {
-    console.log("etes", node)
 
     if (node.image !== undefined) {
         let button = document.createElement('itemButton')
@@ -242,8 +227,7 @@ function selectOption(option) {
     const nextTextNodeId = option.nextText
     state = Object.assign(state, option.setState)
 
-    console.log(p.hp, p.value)
-    if (p.hp < 100 && p.value <= 0) { //HP equal or smaller than 0 restarts the Game
+    if (p.hp < 0 && p.value <= 0) { //HP equal or smaller than 0 restarts the Game
         p.value = p.value + 1
         return displayGame(14)
     }
@@ -284,9 +268,9 @@ function displayStats() {
     let items = document.createElement("inv2"); //add buttons to html document
 
     if (p.inventory.items != null) {
-        console.log(p.inventory.items)
         p.inventory.items.forEach(item => //add buttons to html document
-            items.innerHTML = "<br />" + "Item " + item) //add buttons to html document
+
+            items.innerHTML += "<br />" + "Item " + item) //add buttons to html document
 
     }
 
@@ -320,7 +304,7 @@ function miniGame() {
         } else if (timeLeft === 0 && clicks < 30) {
             clearInterval(countdown);
             p.hp = 0;
-            console.log(p)
+
             alert(`You lost! You got ${clicks} clicks.`);
         }
     }, 1000);
@@ -343,9 +327,9 @@ function npcMeeting(npcNode, player) {
 function probabilityEvent() {
     let rand = Math.floor(Math.random() * 10)
     if (rand >= 5) {
-        p.addItemInventory("Axe")
-    } else {
-        p.hp = p.hp - 20;
+        p.addItemInventory("Axt")
+        p.addItemInventory("Apfel")
+        p.hp = p.hp + 40;
     }
 }
 

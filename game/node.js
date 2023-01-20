@@ -3,8 +3,6 @@
 
 class Node {
 
-    s
-
     constructor(nodeID, textNodes) {
         this.edge = [];
         this.ID = nodeID;
