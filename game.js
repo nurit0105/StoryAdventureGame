@@ -227,7 +227,7 @@ function selectOption(option) {
     const nextTextNodeId = option.nextText
     state = Object.assign(state, option.setState)
 
-    if (p.hp < 0 && p.value <= 0) { //HP equal or smaller than 0 restarts the Game
+    if (p.hp <= 0 && p.value <= 0) { //HP equal or smaller than 0 restarts the Game
         p.value = p.value + 1
         return displayGame(14)
     }
